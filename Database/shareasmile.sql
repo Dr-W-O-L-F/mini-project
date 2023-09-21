@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2023 at 12:04 PM
+-- Generation Time: Sep 21, 2023 at 07:17 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,6 +42,7 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`email`, `password`, `user_type`, `security_question`, `security_answer`) VALUES
 ('abc@gmail.com', 'pass@1234', 'Donor', 'Your favorite number?', '6'),
 ('ahbc@gmai.com', 'pass@1234', 'Organisation', 'Your favorite number?', '0'),
+('gbb@gmail.com', 'pass@1234', 'Organization', 'Your favorite number?', '6'),
 ('pailysaji33@gmail.com', 'paily@1234', 'Admin', 'What is your pet?', 'Dog');
 
 -- --------------------------------------------------------
@@ -99,10 +100,13 @@ CREATE TABLE `registration_organisation` (
 --
 
 INSERT INTO `registration_organisation` (`full_name`, `email`, `phone`, `street`, `district`, `pincode`, `organisation_id`, `organisation_name`, `organisation_email`, `organisation_phone`, `organisation_street`, `organistion_district`, `organisation_pincode`, `organisation_licence_number`, `organisation_licence_file`, `verify_status`) VALUES
+('Paily Saji', 'aabc@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 11, 'QWERTY', 'aabc@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-8675434', 'uploads/bg.jpg', 0),
 ('Paily Saji', 'cbc@gmail.com', '8281860108', 'lll', 'llll', '123456', 1, 'BPC Piravom', 'abc@gmai.com', '8281860108', 'Pothanicad', 'Eranakulam', '123456', 'A-28489', 'uploads/3.jpg', 1),
 ('John Kora', 'agc@gmail.com', '8281860108', 'Muvattupuzha', 'Eranakulam', '123459', 3, 'OR Organization', 'agc@gmail.com', '8281860108', 'Muvattupuzha', 'Eranakulam', '123459', 'AB-56366', 'uploads/bg.jpg', 0),
 ('Paily Saji', 'cabc@gmail.com', '8281860108', 'lll', 'llll', '123456', 2, 'BPC Piravom', 'ahbc@gmai.com', '8281860108', 'Paingottoor', 'Idukki', '123457', 'A-28480', 'uploads/3.jpg', 2),
 ('John Kora', 'agc@gmail.com', '8281860108', 'Muvattupuzha', 'Eranakulam', '123459', 4, 'OR Organization', 'azc@gmail.com', '8281860108', 'Muvattupuzha', 'Eranakulam', '123459', 'AB-56366', 'uploads/bg.jpg', 0),
+('Paily Saji', 'bbb@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 14, 'QWERTY', 'bbb@gmail.com', '08281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-59778', 'uploads/f4.jpg', 0),
+('Paily Saji', 'gbb@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 15, 'QWERTTY', 'gbb@gmail.com', '08281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-59778', 'uploads/f4.jpg', 0),
 ('John Kora', 'agc@gmail.com', '8281860108', 'Muvattupuzha', 'Eranakulam', '123459', 10, 'OR Organization', 'hzc@gmail.com', '8281860108', 'Muvattupuzha', 'Eranakulam', '123459', 'AB-56366', 'uploads/bg.jpg', 0);
 
 --
@@ -143,7 +147,7 @@ ALTER TABLE `registration_donor`
 -- AUTO_INCREMENT for table `registration_organisation`
 --
 ALTER TABLE `registration_organisation`
-  MODIFY `organisation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `organisation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

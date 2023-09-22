@@ -58,14 +58,14 @@ if (mysqli_num_rows($result) > 0) {
         </script>
         <?php 
     }
-    if ($row['user_type'] == 'Organisation') { // Check if user_type is 'Organisation'
+    if ($row['user_type'] == 'Organization') { // Check if user_type is 'Organisation'
         $sql1 = "SELECT * FROM login WHERE email='$email' AND password='$password'";
         $res = mysqli_query($conn, $sql1);
         if (mysqli_num_rows($res) > 0) {
             $r=mysqli_fetch_assoc($res);
             $_SESSION["email"]=$email;
             $_SESSION["usertype"]=$row['user_type']; // Fixed the variable name
-            header("Location: ../organisation/index.php");
+            header("Location: ../organisation/index1.php");
             exit;
         } else {
             ?>

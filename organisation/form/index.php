@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="main">
 				<div class="w3layouts_main_grid">
 				<h1 class="w3layouts_head">Donation Request Form</h1>
-					<form action="#" method="post" class="w3_form_post">
+					<form action="form.php" method="post" class="w3_form_post">
 						<div class="w3_agileits_main_grid w3l_main_grid">
 							<span class="agileits_grid">
 								<label>Donation Type <span class="star">*</span></label>

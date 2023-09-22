@@ -127,7 +127,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <ul class="sidebar-menu">
               <li class="header">MAIN NAVIGATION</li>
               <li class="treeview">
-                <a href="index.php">
+                <a href="index1.php">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
               </li>
@@ -139,8 +139,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 </a>
                 <ul class="treeview-menu">
                   <li><a href="organizationdetails.php"><i class="fa fa-angle-right"></i> Details</a></li>
-                  <li><a href="organizationapprove.php"><i class="fa fa-angle-right"></i> Approve</a></li>
-                </ul>
+                  <li><a href="check.php"><i class="fa fa-angle-right"></i> Request</a></li>
+                  </ul>
               </li>
 			  <li>
                 <a href="complaints.php">
@@ -181,7 +181,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
 									<div class="user-name">
 										<p>Organization Name</p>
-										<span>Organisation</span>
+										<span>OrganiZation</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>

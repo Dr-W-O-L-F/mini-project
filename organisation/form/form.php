@@ -1,3 +1,11 @@
+<html>
+<head>
+<script type="text/javascript" src="swal/jquery.min.js"></script>
+<script type="text/javascript" src="swal/bootstrap.min.js"></script>
+<script type="text/javascript" src="swal/sweetalert2@11.js"></script>
+</head>
+<body>
+</html>
 <?php
 session_start();
  $email=$_SESSION['email'];
@@ -20,17 +28,28 @@ session_start();
     if (mysqli_query($conn, $sql)) {
         ?>
         <script>
-            alert("Form Submitted Successfully");
-            window.location.href = "../index1.php";
+            Swal.fire({
+                                icon: 'success',
+                                text: ' Form submitted successfully',
+                                didClose: () => {
+                                window.location.replace('../index1.html');
+                                }
+                                });  
         </script>
         <?php
     } else {
         echo "Error: " . mysqli_error($conn);
         ?>
         <script>
-            alert("Error  ");
-            window.location.href = "index.html";
+            Swal.fire({
+                                icon: 'error',
+                                text: ' Error',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });  
         </script>
         <?php
     }
 ?>
+    

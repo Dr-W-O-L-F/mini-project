@@ -1,3 +1,11 @@
+<html>
+<head>
+<script type="text/javascript" src="swal/jquery.min.js"></script>
+<script type="text/javascript" src="swal/bootstrap.min.js"></script>
+<script type="text/javascript" src="swal/sweetalert2@11.js"></script>
+</head>
+<body>
+</html>
 <?php
 session_start();
 require("connect.php");
@@ -36,16 +44,26 @@ if (isset($_GET['id'])) {
         if (mysqli_query($conn, $sql)) {
             ?>
             <script>
-                alert("Form Updated Successfully");
-                window.location.href = "showrequest.php?id=<?php echo  $donation_id ?>";
+                                        Swal.fire({
+                                icon: 'success',
+                                text: 'Form updated successfully ',
+                                didClose: () => {
+                              window.location.href = "showrequest.php?id=<?php echo  $donation_id ?>";
+                                }
+                                });
             </script>
             <?php
         } else {
             echo "Error: " . mysqli_error($conn);
             ?>
             <script>
-                alert("Error");
-                window.location.href = "showrequest.html";
+                                 Swal.fire({
+                                icon: 'error',
+                                text: 'Error ',
+                                didClose: () => {
+                               window.location.href = "showrequest.php";
+                                }
+                                });
             </script>
             <?php
         }

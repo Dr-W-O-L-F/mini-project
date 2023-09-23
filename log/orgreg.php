@@ -1,3 +1,11 @@
+<html>
+<head>
+<script type="text/javascript" src="swal/jquery.min.js"></script>
+<script type="text/javascript" src="swal/bootstrap.min.js"></script>
+<script type="text/javascript" src="swal/sweetalert2@11.js"></script>
+</head>
+<body>
+</html>
 <?php
 require("connect.php");
 
@@ -34,8 +42,13 @@ $res_check_org = select_data($sql_check_org);
 if (mysqli_num_rows($res_check_login) > 0 || mysqli_num_rows($res_check_org) > 0) {
     ?>
     <script>
-        alert("User already exists");
-        window.location.href = "index1.html";
+                        Swal.fire({
+                                icon: 'error',
+                                text: ' User already exists ',
+                                didClose: () => {
+                                window.location.replace('index1.html');
+                                }
+                                });
     </script>
     <?php
 } else {
@@ -51,8 +64,13 @@ if (mysqli_num_rows($res_check_login) > 0 || mysqli_num_rows($res_check_org) > 0
         } else {
             ?>
             <script>
-                alert("File is not an image");
-                window.location.href = "index1.html";
+                                Swal.fire({
+                                icon: 'error',
+                                text: ' File is not an image ',
+                                didClose: () => {
+                                window.location.replace('index1.html');
+                                }
+                                });
             </script>
             <?php
             $uploadOk = 0;
@@ -74,8 +92,13 @@ if (mysqli_query($conn, $sql)) {
                 if (mysqli_query($conn, $sql1)) {
                     ?>
                     <script>
-                        alert("Registration Successful");
-                        window.location.href = "index.html";
+                                        Swal.fire({
+                                icon: 'success',
+                                text: ' Registration Successfull ',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });
                     </script>
                     <?php
                 }
@@ -83,16 +106,26 @@ if (mysqli_query($conn, $sql)) {
                 echo "Error: " . mysqli_error($conn);
                 ?>
                 <script>
-                    alert("Error");
-                    window.location.href = "index1.html";
+                                    Swal.fire({
+                                icon: 'error',
+                                text: 'Error ',
+                                didClose: () => {
+                                window.location.replace('index1.html');
+                                }
+                                });
                 </script>
                 <?php
             }
         } else {
             ?>
             <script>
-                alert("Sorry, there was an error uploading your file.");
-                window.location.href = "index1.html";
+                                Swal.fire({
+                                icon: 'error',
+                                text: 'Sorry, there was an error uploading your file. ',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });
             </script>
             <?php
         }

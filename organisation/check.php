@@ -1,3 +1,11 @@
+<html>
+<head>
+<script type="text/javascript" src="swal/jquery.min.js"></script>
+<script type="text/javascript" src="swal/bootstrap.min.js"></script>
+<script type="text/javascript" src="swal/sweetalert2@11.js"></script>
+</head>
+<body>
+</html>
 <?php
 session_start();
 $email=$_SESSION['email'];
@@ -18,8 +26,13 @@ if (mysqli_num_rows($res) > 0) {
     // Redirect to index.php
     ?>
     <script>
-        alert("You are not verified yet ");
-        window.location.href = "index1.php";
+                        Swal.fire({
+                                icon: 'error',
+                                text: ' You are not verified yet ',
+                                didClose: () => {
+                                window.location.replace('index1.php');
+                                }
+                                });
     </script>
     <?php    exit;
 }

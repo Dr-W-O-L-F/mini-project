@@ -1,3 +1,11 @@
+<html>
+<head>
+<script type="text/javascript" src="swal/jquery.min.js"></script>
+<script type="text/javascript" src="swal/bootstrap.min.js"></script>
+<script type="text/javascript" src="swal/sweetalert2@11.js"></script>
+</head>
+<body>
+</html>
 <?php
 session_start();
 require("connect.php");
@@ -19,16 +27,26 @@ if (mysqli_num_rows($result) > 0) {
         } else {
             ?>
             <script>
-              alert("Password not matching")
-              window.location.href="index.html"
+              Swal.fire({
+                                icon: 'error',
+                                text: 'You are not authorized to access this page',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });   
             </script>
             <?php
         }
     } else {
         ?>
             <script>
-              alert("You are not authorized to access this page")
-              window.location.href="index.html"
+              Swal.fire({
+                                icon: 'error',
+                                text: 'Password not matching ',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });   
             </script>
             <?php
     }
@@ -42,19 +60,29 @@ if (mysqli_num_rows($result) > 0) {
             $_SESSION["usertype"]=$row['user_type']; // Fixed the variable name
             header("Location: ../donor/index.php");
             exit;
-        } else {
+          } else {
             ?>
             <script>
-              alert("Password not matching")
-              window.location.href="index.html"
+              Swal.fire({
+                                icon: 'error',
+                                text: 'You are not authorized to access this page',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });   
             </script>
             <?php
         }
     } else {
         ?>
-        <script>
-          alert("You are not authorized to access this page")
-          window.location.href="index.html"
+            <script>
+              Swal.fire({
+                                icon: 'error',
+                                text: 'Password not matching ',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });   
         </script>
         <?php 
     }
@@ -67,26 +95,41 @@ if (mysqli_num_rows($result) > 0) {
             $_SESSION["usertype"]=$row['user_type']; // Fixed the variable name
             header("Location: ../organisation/index1.php");
             exit;
-        } else {
+          } else {
             ?>
             <script>
-              alert("Password not matching")
-              window.location.href="index.html"
+              Swal.fire({
+                                icon: 'error',
+                                text: 'You are not authorized to access this page',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });   
             </script>
             <?php
         }
     } else {
         ?>
-        <script>
-          alert("You are not authorized to access this page")
-          window.location.href="index.html"
-        </script>
+            <script>
+              Swal.fire({
+                                icon: 'error',
+                                text: 'Password not matching ',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });   
+            </script>
         <?php 
     }
 } else {
     ?>
     <script>
-      alert("Email not found")
-      window.location.href="index.html"
+                Swal.fire({
+                                icon: 'error',
+                                text: ' Email not found ',
+                                didClose: () => {
+                                window.location.replace('index.html');
+                                }
+                                });
     </script>
 <?php } ?> 

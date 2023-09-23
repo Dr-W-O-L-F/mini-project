@@ -22,7 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<div class="main">
 		<h1>Credit Card Donation Form</h1>
-		<form action="#" method="post"> 
+		<form action="pay.php" method="post"> 
 		<div class="w3_agile_main_grids">
 		
 			<div class="agileits_w3layouts_main_grid">
@@ -40,18 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="w3_agileits_main_grid_left_grid">
 							<h3>Your Donation :</h3>
 						<div class="agileits_main_grid_left_l_grids">
-							<div class="w3_agileits_main_grid_left_l">
-								<h4>Donation Type</h4>
-							</div>
 							<div class="w3_agileits_main_grid_left_r">
-								<form>
-									<div class="agileinfo_radio_button">
-										<label class="radio"><input type="radio" name="radio" checked=""><i></i>Once-Off-Gift</label>
-									</div>
-									<div class="agileinfo_radio_button">
-										<label class="radio"><input type="radio" name="radio"><i></i>Regular-Monthly-Gift</label>
-									</div>
-								</form>
 							</div>
 						</div>
 						<div class="agileits_main_grid_left_l_grids">
@@ -61,14 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="w3_agileits_main_grid_left_r">
 								<form>
 									<div class="agileinfo_radio_button">
-										<label class="radio"><input type="radio" name="radio" checked=""><i></i>$100</label>
-									</div>
-						
-									<div class="agileinfo_radio_button">
-										<label class="radio"><input type="radio" name="radio"><i></i>$500</label>
-									</div>
-									<div class="agileinfo_radio_button">
-										<label class="radio"><input type="radio" name="radio"><i></i>$1000</label>
+									<input type="text" name="amount" placeholder="Amount" required="">
 									</div>
 								</form>
 							</div>
@@ -118,7 +100,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</form>
 		<div class="agileits_copyright">
-			<p>© 2017 Credit Card Donation Form. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
 		</div>
 	</div>
 	<!-- Validator js -->  

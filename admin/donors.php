@@ -2,8 +2,8 @@
 include("header.php");
 ?>
 			<div id="page-wrapper">
-			<div class="main-page">Donors
-				<h2 class="title1"></h2>
+			<div class="main-page">
+				<h2 class="title1">Donors</h2>
 				
 			</div>
 		</div>

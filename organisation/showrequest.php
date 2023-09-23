@@ -34,6 +34,11 @@ if (isset($_GET['id'])) {
                 echo "<b>Place:</b> " . $row['place'] . "<br>";
                 echo "<b>Date:</b> " . $row['date'] . "<br>";
         // Add more fields as needed
+        echo '<br><br>';
+echo '<a class="btn btn-success" href="edit.php?id='. $row['donation_id'] . '">Edit</a>';
+echo ' ';
+echo '<a class="btn btn-danger" href="delete.php?id='. $row['donation_id'] . '">Delete</a>';
+echo '</h3>';
         
         echo "</div></div>";
     } else {
@@ -42,11 +47,6 @@ if (isset($_GET['id'])) {
 } else {
     echo "<p>No ID provided.</p>";
 }
-echo '<br><br>';
-echo '<a class="btn btn-success" href="edit.php?id='. $row['donation_id'] . '">Edit</a>';
-echo ' ';
-echo '<a class="btn btn-danger" href="delete.php?id='. $row['donation_id'] . '">Delete</a>';
-echo '</h3>';
 ?>
 </div>
 </div>

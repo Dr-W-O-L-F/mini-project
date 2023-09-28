@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2023 at 09:18 AM
+-- Generation Time: Sep 28, 2023 at 09:00 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,8 +43,35 @@ INSERT INTO `login` (`email`, `password`, `user_type`, `security_question`, `sec
 ('aabc@gmail.com', 'pass@1234', 'Organization', 'Your favorite number?', '5'),
 ('abc@gmail.com', 'pass@1234', 'Donor', 'Your favorite number?', '6'),
 ('gbb@gmail.com', 'pass@1234', 'Organization', 'Your favorite number?', '6'),
+('mon@gmail.com', 'pass@1234', 'Donor', 'Your favorite number?', '10'),
+('monc@gmail.com', 'pass@1234', 'Organization', 'Your favorite number?', '6'),
 ('pailysaji33@gmail.com', 'paily@1234', 'Admin', 'What is your pet?', 'Dog'),
 ('tho2@gmail.com', 'pass@1234', 'Donor', 'Your favorite number?', '10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `payment_id` int(11) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone_number` varchar(15) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `address` varchar(500) NOT NULL,
+  `amount` varchar(20) NOT NULL,
+  `payment_status` int(11) NOT NULL,
+  `organization_email` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`payment_id`, `full_name`, `email`, `phone_number`, `city`, `address`, `amount`, `payment_status`, `organization_email`) VALUES
+(20, 'moncy', 'mon@gmail.com', '01234567890', 'Pothanicad', 'Muvattupuzha', '2000', 0, 'monc@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -69,6 +96,7 @@ CREATE TABLE `registration_donor` (
 
 INSERT INTO `registration_donor` (`user_id`, `full_name`, `email`, `mob`, `street`, `district`, `pincode`, `password`) VALUES
 (4, 'Paily Saji', 'abc@gmail.com', 2147483647, 'llll', 'llll', 123456, 'pass@1234'),
+(6, 'moncy', 'mon@gmail.com', 1234567890, 'Muvattupuzha', 'Eranakulam', 123459, 'pass@1234'),
 (5, 'Thomas', 'tho2@gmail.com', 828186010, 'Eranakulam', 'Eranakulam', 123456, 'pass@1234');
 
 -- --------------------------------------------------------
@@ -102,7 +130,8 @@ CREATE TABLE `registration_organisation` (
 
 INSERT INTO `registration_organisation` (`full_name`, `email`, `phone`, `street`, `district`, `pincode`, `organisation_id`, `organisation_name`, `organisation_email`, `organisation_phone`, `organisation_street`, `organistion_district`, `organisation_pincode`, `organisation_licence_number`, `organisation_licence_file`, `verify_status`) VALUES
 ('Paily Saji', 'aabc@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 16, 'QWERTY', 'aabc@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-76542', 'uploads/7.jpg', 1),
-('Paily Saji', 'gbb@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 15, 'QWERTTY', 'gbb@gmail.com', '08281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-59778', 'uploads/f4.jpg', 0);
+('Paily Saji', 'gbb@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 15, 'QWERTTY', 'gbb@gmail.com', '08281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-59778', 'uploads/f4.jpg', 0),
+('moncy', 'monc@gmail.com', '01234567890', 'Muvattupuzha', 'Eranakulam', '123459', 17, 'QWERTTY', 'monc@gmail.com', '08281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-98546', 'uploads/9.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +162,10 @@ INSERT INTO `request_form` (`donation_id`, `organization_email`, `donation_type`
 (3, 'aabc@gmail.com', 'Scholarship', 'Need for Education', '30000', '8436341685', '35468PH', 'India Bank', 'Thomas Mathew', 'Eranakulam', 'Eranakulam', '08/31/2023'),
 (4, 'aabc@gmail.com', 'Hospital Case', 'Need for Medical Treatment', '50000', '5632552236', 'L5226P', 'India Bank', 'John', 'Eranakulam', 'Eranakulam', '09/26/2023'),
 (5, 'aabc@gmail.com', 'Orphanage', 'Maintainance of Orphanage', '60000', '563222559965', 'LF689U', 'India Bank', 'Thomas', 'Muvattupuzha', 'Muvattupuzha', '08/31/2023'),
-(6, 'aabc@gmail.com', 'Scholarship', 'Need for higher Education', '250000', '368435364', 'GR6435GD', 'India Bank', 'Kora', 'Muvattupuzha', 'Muvattupuzha', '09/05/2023');
+(6, 'aabc@gmail.com', 'Scholarship', 'Need for higher Education', '250000', '368435364', 'GR6435GD', 'India Bank', 'Kora', 'Muvattupuzha', 'Muvattupuzha', '09/05/2023'),
+(7, 'monc@gmail.com', 'Scholarship', 'Education', '5285', '8585298574', 'Kh8552', 'India Bank', 'Thomas', 'Eranakulam', 'Eranakulam', '09/20/2023'),
+(8, 'monc@gmail.com', 'Hospital Case', 'Surgery', '70000', '5632552236', 'LF689U', 'India Bank', 'john', 'Muvattupuzha', 'Pothanicad', '09/30/2023'),
+(9, 'monc@gmail.com', 'Hospital Case', 'Surgery', '70000', '5632552236', 'LF689U', 'India Bank', 'john', 'Muvattupuzha', 'Pothanicad', '09/30/2023');
 
 --
 -- Indexes for dumped tables
@@ -144,6 +176,12 @@ INSERT INTO `request_form` (`donation_id`, `organization_email`, `donation_type`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`payment_id`);
 
 --
 -- Indexes for table `registration_donor`
@@ -170,22 +208,28 @@ ALTER TABLE `request_form`
 --
 
 --
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT for table `registration_donor`
 --
 ALTER TABLE `registration_donor`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `registration_organisation`
 --
 ALTER TABLE `registration_organisation`
-  MODIFY `organisation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `organisation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `request_form`
 --
 ALTER TABLE `request_form`
-  MODIFY `donation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `donation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -34,7 +34,7 @@ include("header.php");
               <li class="list-group-item">Account Number: <?php echo $row['account_number'] ?></li>
             </ul>
             <div class="card-body">
-              <a href="web/index.php" class="btn btn-primary">Donate</a>
+            <a href="web/index.php?email=<?php echo $row['organization_email']; ?>" class="btn btn-primary">Donate</a>
 			  <a href="fulldetails.php?id=<?php echo $row['donation_id']; ?>" class="btn btn-primary">Full Details</a>
 		    </div>
           </div>

@@ -35,7 +35,9 @@ if (isset($_GET['id'])) {
                 echo "<b>Date:</b> " . $row['date'] . "<br>";
         // Add more fields as needed
         echo '<br><br>';
-      ?><a href="donationdetails.php" class="btn btn-primary">Previous Page</a><?php
+      ?>             
+       <a href="web/index.php?email=<?php echo $row['organization_email']; ?>" class="btn btn-primary">Donate</a>
+      <?php
 echo '</h3>';
         
         echo "</div></div>";

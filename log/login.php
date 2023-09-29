@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
             <script>
               Swal.fire({
                                 icon: 'error',
-                                text: 'You are not authorized to access this page',
+                                text: 'Password or email is not matching',
                                 didClose: () => {
                                 window.location.replace('index.html');
                                 }
@@ -42,7 +42,7 @@ if (mysqli_num_rows($result) > 0) {
             <script>
               Swal.fire({
                                 icon: 'error',
-                                text: 'Password not matching ',
+                                text: 'Password or email not matching ',
                                 didClose: () => {
                                 window.location.replace('index.html');
                                 }
@@ -65,7 +65,7 @@ if (mysqli_num_rows($result) > 0) {
             <script>
               Swal.fire({
                                 icon: 'error',
-                                text: 'You are not authorized to access this page',
+                                text: 'Password or email is not matching',
                                 didClose: () => {
                                 window.location.replace('index.html');
                                 }
@@ -78,7 +78,7 @@ if (mysqli_num_rows($result) > 0) {
             <script>
               Swal.fire({
                                 icon: 'error',
-                                text: 'Password not matching ',
+                                text: 'Password or email is not matching  ',
                                 didClose: () => {
                                 window.location.replace('index.html');
                                 }
@@ -100,7 +100,7 @@ if (mysqli_num_rows($result) > 0) {
             <script>
               Swal.fire({
                                 icon: 'error',
-                                text: 'You are not authorized to access this page',
+                                text: 'Password or email is not matching',
                                 didClose: () => {
                                 window.location.replace('index.html');
                                 }
@@ -113,7 +113,7 @@ if (mysqli_num_rows($result) > 0) {
             <script>
               Swal.fire({
                                 icon: 'error',
-                                text: 'Password not matching ',
+                                text: 'Password or email is not matching ',
                                 didClose: () => {
                                 window.location.replace('index.html');
                                 }

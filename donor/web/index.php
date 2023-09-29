@@ -22,6 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<?php 
 $organization_email = isset($_GET['email']) ? $_GET['email'] : null;
+$donation_id = isset($_GET['donation_id']) ? $_GET['donation_id'] : null;
 ?>
 	<div class="main">
 		<h1>Credit Card Donation Form</h1>
@@ -92,6 +93,7 @@ $organization_email = isset($_GET['email']) ? $_GET['email'] : null;
 										<div class="clear">	</div>		
 									</div>
 									<input type="hidden" name="organization_email" value="<?php echo $organization_email; ?>">
+									<input type="hidden" name="donation_id" value="<?php echo $donation_id; ?>">
 									<input type="submit" value="Donate">
 								
 							</div>
@@ -111,4 +113,4 @@ $organization_email = isset($_GET['email']) ? $_GET['email'] : null;
 	<!-- //Validator -->  
 
 </body>
-</html>
+</html> 

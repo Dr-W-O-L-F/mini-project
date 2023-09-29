@@ -138,7 +138,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="donationdetails.php"><i class="fa fa-angle-right"></i> Donation Details</a></li>
+                  <li><a href="donationdetails.php"><i class="fa fa-angle-right"></i> Donation List</a></li>
                   <li><a href="payments.php"><i class="fa fa-angle-right"></i> Payments</a></li>
                 </ul>
               </li>

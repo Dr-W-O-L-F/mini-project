@@ -7,9 +7,14 @@
 <body>
 </html>
 <?php
+session_start(); // Start the session
+$email1 = $_SESSION['email'];
+?>
+<?php
 require("../connect.php");
 
 $organization_email = $_POST["organization_email"];
+$donation_id=$_POST['donation_id'];
 // Get form data
 $full_name = $_POST["full_name"];
 $email = $_POST["email"];
@@ -23,8 +28,8 @@ $expiration_date = $_POST["date"];
 $cvv = $_POST["cvv"];
 
 // Perform the database insertion (using mysqli as an example)
-$sql = "INSERT INTO `payment` (`payment_id`, `full_name`, `email`, `phone_number`, `city`, `address`, `amount`, `payment_status`, `organization_email`)
-        VALUES (NULL, '$full_name', '$email', '$phone_number', '$place', '$address', '$amount', '0', '$organization_email')";
+$sql = "INSERT INTO `payment` (`payment_id`, `full_name`, `email`, `phone_number`, `city`, `address`, `amount`, `payment_status`, `donor_email`, `organization_email`, `donation_id`)
+        VALUES (NULL, '$full_name', '$email', '$phone_number', '$place', '$address', '$amount', '1', '$email1', '$organization_email', '$donation_id')";
 
 if ($conn->query($sql) === TRUE) {
     // Close the database connection

@@ -19,7 +19,7 @@ $email = $_SESSION['email'];
                 <?php
                 require("connect.php");
                 // Corrected the SQL query by adding single quotes around $email
-                $sql = "SELECT * FROM payment WHERE donor_email='$email'";
+                $sql = "SELECT * FROM payment WHERE organization_email='$email'";
                 $res = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($res) > 0) {
                     while ($row = mysqli_fetch_assoc($res)) {

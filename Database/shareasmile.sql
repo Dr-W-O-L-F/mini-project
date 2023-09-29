@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2023 at 09:00 PM
+-- Generation Time: Sep 29, 2023 at 09:48 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -63,15 +63,20 @@ CREATE TABLE `payment` (
   `address` varchar(500) NOT NULL,
   `amount` varchar(20) NOT NULL,
   `payment_status` int(11) NOT NULL,
-  `organization_email` varchar(500) NOT NULL
+  `donor_email` varchar(50) NOT NULL,
+  `organization_email` varchar(500) NOT NULL,
+  `donation_id` int(11) NOT NULL,
+  `time_stamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `payment`
 --
 
-INSERT INTO `payment` (`payment_id`, `full_name`, `email`, `phone_number`, `city`, `address`, `amount`, `payment_status`, `organization_email`) VALUES
-(20, 'moncy', 'mon@gmail.com', '01234567890', 'Pothanicad', 'Muvattupuzha', '2000', 0, 'monc@gmail.com');
+INSERT INTO `payment` (`payment_id`, `full_name`, `email`, `phone_number`, `city`, `address`, `amount`, `payment_status`, `donor_email`, `organization_email`, `donation_id`, `time_stamp`) VALUES
+(28, 'Thomas', 'tho2@gmail.com', '828186010', 'Pothanicad', 'Eranakulam', '500', 1, 'aabc@gmail.com', 'aabc@gmail.com', 4, '2023-09-29 06:44:46'),
+(29, 'Paily Saji', 'aabc@gmail.com', '08281860108', 'Pothanicad', 'Eranakulam', '899', 1, 'abc@gmail.com', 'aabc@gmail.com', 3, '2023-09-29 07:13:28'),
+(31, 'Thomas', 'tho2@gmail.com', '828186010', 'Pothanicad', 'Eranakulam', '2000', 1, 'abc@gmail.com', 'aabc@gmail.com', 6, '2023-09-29 07:37:42');
 
 -- --------------------------------------------------------
 
@@ -211,7 +216,7 @@ ALTER TABLE `request_form`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `registration_donor`

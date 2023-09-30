@@ -184,9 +184,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 						<li class="dropdown profile_details_drop">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
-									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
+									<span class="prfil-img"><img src="images/OIP.jpeg" alt=""> </span> 
 									<div class="user-name">
-										<p>Donor Name</p>
+										<p>Donor</p>
 										<span>Donor</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
@@ -195,9 +195,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								</div>	
 							</a>
 							<ul class="dropdown-menu drp-mnu">
-								<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
-								<li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li> 
-								<li> <a href="#"><i class="fa fa-suitcase"></i> Profile</a> </li> 
+								<li> <a href="profile.php"><i class="fa fa-suitcase"></i> Profile</a> </li> 
 								<li> <a href="../log/logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>

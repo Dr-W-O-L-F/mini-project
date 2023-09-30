@@ -148,6 +148,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <small class="label pull-right label-info"></small>
                 </a>
               </li>
+              <li>
+                <a href="complaintdetails.php">
+                <i class="fa fa-th"></i> <span>Complaint Details</span>
+                <small class="label pull-right label-info"></small>
+                </a>
+              </li>
             </ul>
           </div>
           <!-- /.navbar-collapse -->

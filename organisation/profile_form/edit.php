@@ -41,7 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <?php
 require('connect.php');
 $email = $_GET['email'];
-$stmt = $conn->prepare("SELECT * FROM registration_donor WHERE email = ?");
+$stmt = $conn->prepare("SELECT * FROM registration_organisation WHERE email = ?");
 $stmt1 = $conn->prepare("SELECT * FROM login WHERE email = ?");
 if (!$stmt || !$stmt1) {
     die("Prepare failed: " . $conn->error);
@@ -66,36 +66,31 @@ if ($res->num_rows > 0) {
         <form onsubmit="return validatePassword()" action="update.php?email=<?php echo $email; ?>" method="POST" enctype="multipart/form-data">
             <ul class="left-form">
                 <h2>Edit Account:</h2>
-                <li>
-                    <input type="text" name="full_name" placeholder="Full Name" value="<?php echo $row['full_name'] ?>" pattern="^[A-Za-z\s]+$" required/>
-                    <div class="clear"> </div>
-                </li> 
-                <li>
-                    <input type="email" name="email" placeholder="Email" value="<?php echo $row['email'] ?>" required/>
-                    <div class="clear"> </div>
-                </li> 
-                <li>
-                    <input type="text" name="mobnumber" placeholder="Mobile Number" value="<?php echo $row['mob'] ?>" pattern="^\d{10,11}$" required/>
-                    <div class="clear"> </div>
-                </li> 
-                <li>
-                    <input type="text" name="street" placeholder="Street" value="<?php echo $row['street'] ?>" pattern="^[A-Za-z]+$" required/>
-                    <div class="clear"> </div>
-                </li> 
-                <li>
-                    <input type="text" name="district" placeholder="District" value="<?php echo $row['district'] ?>" pattern="^[A-Za-z]+$" required/>
-                    <div class="clear"> </div>
-                </li> 
-                <li>
-                    <input type="text" name="pincode" placeholder="Pincode" value="<?php echo $row['pincode'] ?>" pattern="^\d{6}$" required/>
-                    <div class="clear"> </div>
-                </li> 
-                <li>
-                    <input type="password" name="password" placeholder="Password" value="<?php echo $row['password'] ?>" id="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
-                    <div class="clear"> </div>
-                </li>
-                <li>
-                </li> 
+				<li>
+					<input type="text" name="full_name" placeholder="Full Name" value="<?php echo $row['full_name'] ?>" pattern="^[A-Za-z\s]+$" required/>
+					<div class="clear"> </div>
+				</li> 
+				<li>
+					<input type="email" name="email" placeholder="Email" value="<?php echo $row['email'] ?>" required/>
+					<div class="clear"> </div>
+				</li> 
+				<li>
+					<input type="text" name="mobnumber" placeholder="Mobile Number" value="<?php echo $row['phone'] ?>" pattern="^\d{10,11}$" required/>
+					<div class="clear"> </div>
+				</li> 
+				<li>
+					<input type="text" name="street" placeholder="Street" value="<?php echo $row['street'] ?>" pattern="^[A-Za-z]+$" required/>
+					<div class="clear"> </div>
+				</li> 
+				<li>
+					<input type="text" name="district" placeholder="District" value="<?php echo $row['district'] ?>" pattern="^[A-Za-z]+$" required/>
+					<div class="clear"> </div>
+				</li> 
+				<li>
+					<input type="text" name="pincode" placeholder="Pincode" value="<?php echo $row['pincode'] ?>" pattern="^\d{6}$" required/>
+					<div class="clear"> </div>
+				</li> 
+  
                 <?php
                } if (!$stmt1->bind_param("s", $email)) {
                     die("Binding parameters failed: " . $stmt1->error);
@@ -108,6 +103,12 @@ if ($res->num_rows > 0) {
                 if ($res1->num_rows > 0) {
                     $row1 = $res1->fetch_assoc();
                     ?>
+                    <li>
+                    <input type="password" name="password" placeholder="Password" value="<?php echo $row1['password'] ?>" id="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
+                    <div class="clear"> </div>
+                </li>
+                <li>
+                </li>
                     <li>
                         <select id="Questions" name="security_question">
                             <option value="Your favorite number?" <?php if ($row1['security_question'] === 'Your favorite number?') echo 'selected'; ?>>Your favorite number?</option>
@@ -124,10 +125,28 @@ if ($res->num_rows > 0) {
                 <input type="submit" value="UPDATE" name="update">
             </ul>
             <ul class="right-form">
-                
-            </ul>
-            <div class="clear"> </div>
-        </form>
+				<h3>ORGANIZATION DETAILS:</h3>
+				<div>
+					<li><input type="text" name="org_name" placeholder="Organization Name" value="<?php echo $row['organisation_name'] ?>" pattern="^[A-Za-z\s]+$" required/></li>
+					<li><input type="email" name="org_email" placeholder="Organization Email" value="<?php echo $row['organisation_email'] ?>" required/></li>
+					<li><input type="text" name="org_phone" placeholder="Organization Phone" value="<?php echo $row['organisation_phone'] ?>" pattern="^\d{10,11}$" required/></li>
+					<li><input type="text" name="org_street" placeholder="Organization Street" value="<?php echo $row['organisation_street'] ?>" pattern="^[A-Za-z]+$" required/></li>
+					<li><input type="text" name="org_district" placeholder="Organization District" value="<?php echo $row['organistion_district'] ?>" pattern="^[A-Za-z]+$" required/></li>
+					<li><input type="text" name="org_pincode" placeholder="Organization Pincode" value="<?php echo $row['organisation_pincode'] ?>" pattern="^\d{6}$" required/></li>
+					<li><input type="text" name="org_license_num" placeholder="Organization License Number" value="<?php echo $row['organisation_licence_number'] ?>" pattern="^[A-Za-z0-9\-]+$" required/></li>
+                    <li>
+    <label for="org_license">License</label>
+    <input type="file" name="org_license" placeholder="Upload" value="<?php echo $row['organisation_licence_file'] ?>"/>
+    <?php if (!empty($row['organisation_licence_file'])): ?>
+        <a href="../../log/<?php echo $row['organisation_licence_file']; ?>" target="_blank">Current File</a>
+    <?php endif; ?>
+</li>
+				</div>
+				<div class="clear"> </div>
+			</ul>
+			<div class="clear"> </div>
+		</form>
     </div>
 </body>
 </html>
+ 

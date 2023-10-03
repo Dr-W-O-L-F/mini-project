@@ -29,7 +29,7 @@ $email = $_SESSION['email'];
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['amount'] ?></td>
                             <td><?php echo $row['time_stamp'] ?></td>
-                            <td><a class="btn btn-primary" href="fulldetails.php?id=<?php echo $row['payment_id'] ?>&donation_id=<?php echo $row['donation_id']; ?>">View</a></td>
+                            <td><a class="btn btn-primary" href="showdetails.php?id=<?php echo $row['payment_id'] ?>&donation_id=<?php echo $row['donation_id']; ?>">View</a></td>
                         </tr>
                 <?php
                     }
@@ -43,3 +43,4 @@ $email = $_SESSION['email'];
 <?php
 include("footer.php");
 ?>
+ 

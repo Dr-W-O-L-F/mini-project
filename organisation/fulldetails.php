@@ -55,7 +55,7 @@ include("header.php");
                         // Add any additional formatting or styling as needed
                         echo "</div>"; // Close the div for each row
                     }
-                    echo '<a class="btn btn-primary" href="payments.php">Go Back</a>';
+                    echo '<a class="btn btn-primary" href="recieve.php">Go Back</a>';
                     echo '</h3>';
                 } else {
                     echo "<p>No data found for the specified ID.</p>";

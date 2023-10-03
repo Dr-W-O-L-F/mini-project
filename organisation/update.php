@@ -72,3 +72,4 @@ if (isset($_GET['id'])) {
     echo "ID is missing in the URL.";
 }
 ?>
+  

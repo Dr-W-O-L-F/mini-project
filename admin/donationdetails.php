@@ -5,7 +5,7 @@ include("header.php");
     <div class="main-page">
         <h2 class="title1">Donation Details</h2>
 
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <th>Donor Name</th>
                 <th>Email</th>

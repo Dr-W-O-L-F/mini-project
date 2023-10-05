@@ -1,3 +1,7 @@
+<div class="footer">
+		   <p>&copy;All Rights Reserved | Design by <a href="">SHAREaSMILE</a></p>		</div>
+        <!--//footer-->
+	</div>
 <script src="js/Chart.bundle.js"></script>
     <script src="js/utils.js"></script>
 	

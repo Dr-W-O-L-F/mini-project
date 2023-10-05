@@ -3,7 +3,6 @@ require 'connect.php';
 
 if (isset($_POST['complaint_id'])) {
     $id = $_POST['complaint_id'];
-    echo $id;
 } else {
     // Handle the case where 'complaint_id' is not set, e.g., by redirecting the user or showing an error message.
     exit("Complaint ID not provided.");

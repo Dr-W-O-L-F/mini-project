@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
         // Add more fields as needed
         echo '<br><br>';
       ?>             
-       <a href="web/index.php?email=<?php echo $row['organization_email']; ?>" class="btn btn-primary">Donate</a>
+       <a href="web/index.php?email=<?php echo $row['organization_email']; ?>&donation_id=<?php echo $row['donation_id']; ?>" class="btn btn-primary">Donate</a>
       <?php
 echo '</h3>';
         
@@ -53,4 +53,4 @@ echo '</h3>';
 <?php
 include("footer.php");
 ?>
- 
+   

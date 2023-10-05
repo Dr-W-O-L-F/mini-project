@@ -23,7 +23,6 @@ include("header.php");
                 $row = $res->fetch_assoc();
 
                 // Display the details of the selected row
-                echo "<div id='page-wrapper'>";
                 echo "<h3><b>Donor Name:</b> " . $row['full_name'] . "<br>";
                 echo "<b>Email:</b> " . $row['email'] . "<br>";
                 echo "<b>Phone Number :</b> " . $row['phone_number'] . "<br>";
@@ -41,7 +40,6 @@ include("header.php");
                 if ($res->num_rows > 0) {
                     while ($row1 = $res->fetch_assoc()) {
                         // Display the details of each row from request_form
-                        echo "<div id='page-wrapper'>";
                         echo "<b>Donation Type:</b> " . $row1['donation_type'] . "<br>";
                         echo "<b>Donation Details:</b> " . $row1['donation_details'] . "<br>";
                         echo "<b>Estimated Amount :</b> " . $row1['estimated_amount'] . "<br>";
@@ -53,7 +51,6 @@ include("header.php");
                         echo "<b>Place:</b> " . $row1['place'] . "<br>";
                         echo "<b>Date:</b> " . $row1['date'] . "<br>";
                         // Add any additional formatting or styling as needed
-                        echo "</div>"; // Close the div for each row
                     }
                     echo '<a class="btn btn-primary" href="payments.php">Go Back</a>';
                     echo '</h3>';

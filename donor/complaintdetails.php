@@ -8,7 +8,7 @@ $email = $_SESSION['email'];
     <div class="main-page">
         <h2 class="title1">Complaints List</h2>
 
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <th>
                     <h2 class="title1">Subject</h2>

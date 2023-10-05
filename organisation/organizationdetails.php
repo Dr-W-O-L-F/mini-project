@@ -7,7 +7,7 @@ $email = $_SESSION['email'];
 <div id="page-wrapper">
   <div class="main-page">
     <h2 class="title1">Request Details</h2>
-    <table class="table">
+    <table class="table table-hover">
       <thead>
         <th>
           <h2 class="title1">Donation Type</h2>

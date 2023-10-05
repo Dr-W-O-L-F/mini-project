@@ -202,7 +202,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								</div>	
 							</a>
 							<ul class="dropdown-menu drp-mnu">
-								<li> <a href="#"><i class="fa fa-suitcase"></i> Profile</a> </li> 
+								<li> <a href="profile.php"><i class="fa fa-suitcase"></i> Profile</a> </li> 
 								<li> <a href="../log/logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>

@@ -1,57 +1,31 @@
 <?php
 include("header.php");
 ?>
-			<div id="page-wrapper">
-			<div class="main-page">
-				<h2 class="title1">Complaints</h2>
-				
 
-				<div class="row mx-0 justify-content-center">
-    <div class="col-md-7 col-lg-5 px-lg-2 col-xl-4 px-xl-0 px-xxl-3">
-      <form
-        method="POST"
-        class="w-100 rounded-1 p-4 border bg-white"
-        action="complaintinsert.php"
-      >
-        <label class="d-block mb-4">
-          <span class="form-label d-block">Subject</span>
-          <input
-            name="subject"
-            type="text"
-            class="form-control"
-            placeholder="Complaint Title"
-          />
-        </label><br>
+<div id="page-wrapper">
+  <div class="main-page">
+    <h2 class="title1">Complaints</h2>
 
-        <label class="d-block mb-4">
-          <span class="form-label d-block"> Description</span>
-		  <textarea
-  name="description"
-  class="form-control"
-  rows="10"
-  placeholder="Additional details?"
-></textarea>
-        </label>
-
-        <div class="mb-3">
-          <button type="submit" class="btn btn-primary px-3 rounded-3">
-            SEND
-          </button>
+    <div class="col-md-8 compose-right widget-shadow">
+      <div class="panel-default">
+        <div class="panel-heading">
+          Compose New Complaint
         </div>
-
-        <div class="d-block text-end">
-          <div class="small">
-        
+        <div class="panel-body">
+          <div class="alert alert-info">
+            Please fill details to send a new message
           </div>
+          <form class="com-mail" method="POST" action="complaintinsert.php">
+            <input type="text" class="form-control1 control3" placeholder="Subject :" name="subject">
+            <textarea rows="6" class="form-control1 control2" placeholder="Message :" name="description"></textarea>
+            <input type="submit" value="Send Message">
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
-		
-			</div>
-		</div>
-	
-  <?php
-  include("footer.php");
-  ?>
+
+<?php
+include("footer.php");
+?>

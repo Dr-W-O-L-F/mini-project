@@ -128,7 +128,6 @@ if ($res->num_rows > 0) {
 				<h3>ORGANIZATION DETAILS:</h3>
 				<div>
 					<li><input type="text" name="org_name" placeholder="Organization Name" value="<?php echo $row['organisation_name'] ?>" pattern="^[A-Za-z\s]+$" required/></li>
-					<li><input type="email" name="org_email" placeholder="Organization Email" value="<?php echo $row['organisation_email'] ?>" required/></li>
 					<li><input type="text" name="org_phone" placeholder="Organization Phone" value="<?php echo $row['organisation_phone'] ?>" pattern="^\d{10,11}$" required/></li>
 					<li><input type="text" name="org_street" placeholder="Organization Street" value="<?php echo $row['organisation_street'] ?>" pattern="^[A-Za-z]+$" required/></li>
 					<li><input type="text" name="org_district" placeholder="Organization District" value="<?php echo $row['organistion_district'] ?>" pattern="^[A-Za-z]+$" required/></li>

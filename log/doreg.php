@@ -28,7 +28,7 @@ Swal.fire({
                                 icon: 'error',
                                 text: ' User already exists',
                                 didClose: () => {
-                                window.location.replace('index2.html');
+                                window.location.replace('index2.php');
                                 }
                                 });   
          </script>
@@ -46,7 +46,7 @@ Swal.fire({
                                 icon: 'success',
                                 text: 'Registration Successfull',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });
         </script>
@@ -59,7 +59,7 @@ Swal.fire({
                                 icon: 'error',
                                 text: 'Something Went Wrong',
                                 didClose: () => {
-                                window.location.replace('index2.html');
+                                window.location.replace('index2.php');
                                 }
                                 });   
          </script>

@@ -13,20 +13,17 @@
 		<i style="--clr:#ff0057;"></i>
 		<i style="--clr:#fffd44;"></i> -->
 		<div class="login">
-			<h2>Login</h2>
-			<form action="login.php" method="POST">
+			<h2>Enter Email</h2>
+			<form action="changepass.php" method="POST">
 			<div class="inputBx">
 				<input type="email" name="email" placeholder="Email">
 			</div>
+
 			<div class="inputBx">
-				<input type="password" name="password" placeholder="Password">
-			</div>
-			<div class="inputBx">
-				<input type="submit" value="Sign in">
+				<input type="submit" value="Change Password">
 			</div>
 			<div class="links">
-				<a href="#">Forget Password</a>
-				<a href="index1.html">Signup Organization</a>/ <a href="index2.html">Signup User</a>
+				<a href="index.php">Login</a>
 			</div>
 			</form>
 		</div>

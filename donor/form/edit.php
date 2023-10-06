@@ -70,10 +70,7 @@ if ($res->num_rows > 0) {
                     <input type="text" name="full_name" placeholder="Full Name" value="<?php echo $row['full_name'] ?>" pattern="^[A-Za-z\s]+$" required/>
                     <div class="clear"> </div>
                 </li> 
-                <li>
-                    <input type="email" name="email" placeholder="Email" value="<?php echo $row['email'] ?>" required/>
-                    <div class="clear"> </div>
-                </li> 
+  
                 <li>
                     <input type="text" name="mobnumber" placeholder="Mobile Number" value="<?php echo $row['mob'] ?>" pattern="^\d{10,11}$" required/>
                     <div class="clear"> </div>
@@ -131,3 +128,4 @@ if ($res->num_rows > 0) {
     </div>
 </body>
 </html>
+ 

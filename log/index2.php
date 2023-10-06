@@ -74,10 +74,10 @@
 						<div class="clear"></div>
 					  </li> 
 					<input type="submit" value="Create Account">
-						<div class="clear"> </div><a href="index.html">Already have an account</a>/ <a href="index1.html">Signup as a organisation</a>
+						<div class="clear"> </div><a href="index.php">Already have an account</a>/ <a href="index1.php">Signup as a organisation</a>
                         </ul><div class="clear"> </div>
 					
                     </form>
                     </div>
         </body>
-        </html>
+        </html> 

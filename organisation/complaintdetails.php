@@ -25,6 +25,9 @@ $email = $_SESSION['email'];
                 <th>
                     <h2 class="title1">Status</h2>
                 </th>
+                <th>
+                    <h2 class="title1">View Replay</h2>
+                </th>
                 <th></th>
             </thead>
             <tbody>
@@ -71,6 +74,9 @@ $email = $_SESSION['email'];
                                         echo "Not Replied";
                                     }
                                     ?>
+                                </td>
+                                <td>
+                                <a class="btn btn-primary" href="replay.php?id=<?php echo $row['complaint_id'] ?>">View Replay</a>
                                 </td>
                             </tr>
                             <?php

@@ -82,7 +82,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clear"> </div>
 				</li> 
 				<input type="submit" value="Create Account">
-				<div class="clear"> </div><a href="index.html">Already have an account</a>/ <a href="index2.html">Signup as a Donor</a>
+				<div class="clear"> </div><a href="index.php">Already have an account</a>/ <a href="index2.php">Signup as a Donor</a>
 			</ul>
 			<ul class="right-form">
 				<h3>ORGANIZATION DETAILS:</h3>

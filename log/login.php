@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
                                 icon: 'error',
                                 text: 'Password or email is not matching',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });   
             </script>
@@ -44,7 +44,7 @@ if (mysqli_num_rows($result) > 0) {
                                 icon: 'error',
                                 text: 'Password or email not matching ',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });   
             </script>
@@ -67,7 +67,7 @@ if (mysqli_num_rows($result) > 0) {
                                 icon: 'error',
                                 text: 'Password or email is not matching',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });   
             </script>
@@ -80,7 +80,7 @@ if (mysqli_num_rows($result) > 0) {
                                 icon: 'error',
                                 text: 'Password or email is not matching  ',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });   
         </script>
@@ -102,7 +102,7 @@ if (mysqli_num_rows($result) > 0) {
                                 icon: 'error',
                                 text: 'Password or email is not matching',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });   
             </script>
@@ -115,7 +115,7 @@ if (mysqli_num_rows($result) > 0) {
                                 icon: 'error',
                                 text: 'Password or email is not matching ',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });   
             </script>
@@ -128,7 +128,7 @@ if (mysqli_num_rows($result) > 0) {
                                 icon: 'error',
                                 text: ' Email not found ',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });
     </script>

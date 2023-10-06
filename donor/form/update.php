@@ -41,7 +41,6 @@ if (isset($_GET['email'])) {
         if (mysqli_query($conn, $sql)) {
             // Update 'login' table
             $sql1 = "UPDATE `login` SET 
-                `email`='$email',
                 `password`='$password',
                 `security_question`='$security_question',
                 `security_answer`='$your_answer' 

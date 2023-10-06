@@ -154,6 +154,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <small class="label pull-right label-info"></small>
                 </a>
               </li>
+              </li>
+              <li class="treeview">
+                <a href="aboutus.php">
+                <i class="fa fa-edit"></i>
+                <span>About Us</span>
+                </a>
+              </li>
             </ul>
           </div>
           <!-- /.navbar-collapse -->

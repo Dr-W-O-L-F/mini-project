@@ -46,7 +46,7 @@ if (mysqli_num_rows($res_check_login) > 0 || mysqli_num_rows($res_check_org) > 0
                                 icon: 'error',
                                 text: ' User already exists ',
                                 didClose: () => {
-                                window.location.replace('index1.html');
+                                window.location.replace('index1.php');
                                 }
                                 });
     </script>
@@ -68,7 +68,7 @@ if (mysqli_num_rows($res_check_login) > 0 || mysqli_num_rows($res_check_org) > 0
                                 icon: 'error',
                                 text: ' File is not an image ',
                                 didClose: () => {
-                                window.location.replace('index1.html');
+                                window.location.replace('index1.php');
                                 }
                                 });
             </script>
@@ -96,7 +96,7 @@ if (mysqli_query($conn, $sql)) {
                                 icon: 'success',
                                 text: ' Registration Successfull ',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index.php');
                                 }
                                 });
                     </script>
@@ -110,7 +110,7 @@ if (mysqli_query($conn, $sql)) {
                                 icon: 'error',
                                 text: 'Error ',
                                 didClose: () => {
-                                window.location.replace('index1.html');
+                                window.location.replace('index1.php');
                                 }
                                 });
                 </script>
@@ -123,7 +123,7 @@ if (mysqli_query($conn, $sql)) {
                                 icon: 'error',
                                 text: 'Sorry, there was an error uploading your file. ',
                                 didClose: () => {
-                                window.location.replace('index.html');
+                                window.location.replace('index1.php');
                                 }
                                 });
             </script>

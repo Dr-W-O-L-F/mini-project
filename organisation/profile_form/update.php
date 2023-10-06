@@ -24,7 +24,6 @@ if (isset($_GET['email'])) {
     $security_question = $_POST['security_question'];
     $your_answer = $_POST['your_answer'];
     $org_name = $_POST['org_name'];
-    $org_email = $_POST['org_email'];
     $org_phone = $_POST['org_phone'];
     $org_street = $_POST['org_street'];
     $org_district = $_POST['org_district'];

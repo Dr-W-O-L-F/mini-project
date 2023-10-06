@@ -11,7 +11,7 @@ if (isset($_POST['complaint_id'])) {
 $message = $_POST['message'];
 
 // Use prepared statements to prevent SQL injection
-$stmt = $conn->prepare("UPDATE `complaints` SET `status` = '1' WHERE `complaint_id` = ?");
+$stmt = $conn->prepare("UPDATE `complaints` SET `status` = '1' , replay='$message' WHERE `complaint_id` = ?");
 $stmt->bind_param("i", $id); // 'i' indicates integer type
 
 if ($stmt->execute()) {

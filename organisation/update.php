@@ -42,6 +42,8 @@ if (isset($_GET['id'])) {
         WHERE `donation_id` = '$donation_id'";
 
         if (mysqli_query($conn, $sql)) {
+            $sql1="UPDATE `total_amount` SET `estimated_amount`='$estimated_amount' WHERE request_id='$donation_id'";
+            if (mysqli_query($conn, $sql1)) {
             ?>
             <script>
                                         Swal.fire({
@@ -53,7 +55,7 @@ if (isset($_GET['id'])) {
                                 });
             </script>
             <?php
-        } else {
+        }} else {
             echo "Error: " . mysqli_error($conn);
             ?>
             <script>

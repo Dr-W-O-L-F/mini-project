@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2023 at 08:16 AM
+-- Generation Time: Oct 07, 2023 at 12:34 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -107,10 +107,10 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`payment_id`, `full_name`, `email`, `phone_number`, `city`, `address`, `amount`, `payment_status`, `donor_email`, `organization_email`, `donation_id`, `time_stamp`) VALUES
-(28, 'Thomas', 'tho2@gmail.com', '828186010', 'Pothanicad', 'Eranakulam', '500', 1, 'aabc@gmail.com', 'aabc@gmail.com', 4, '2023-09-29 06:44:46'),
-(29, 'Paily Saji', 'aabc@gmail.com', '08281860108', 'Pothanicad', 'Eranakulam', '899', 1, 'abc@gmail.com', 'aabc@gmail.com', 3, '2023-09-29 07:13:28'),
-(31, 'Thomas', 'tho2@gmail.com', '828186010', 'Pothanicad', 'Eranakulam', '2000', 1, 'abc@gmail.com', 'aabc@gmail.com', 6, '2023-09-29 07:37:42'),
-(39, 'Polson Eldho', 'pailysaji33@gmail.com', '8585956855', 'w45', '564645', '456464', 1, 'abc@gmail.com', 'monc@gmail.com', 9, '2023-10-05 18:56:08');
+(40, 'John Kora', 'agc@gmail.com', '08281860108', 'Pothanicad', 'Muvattupuzha', '5000', 1, 'abc@gmail.com', 'aabc@gmail.com', 20, '2023-10-07 09:40:48'),
+(41, 'Paily Saji', 'abc@gmail.com', '08281860108', 'Pothanicad', 'llll', '500', 1, 'abc@gmail.com', 'aabc@gmail.com', 20, '2023-10-07 09:41:57'),
+(42, 'Paily Saji', 'aabc@gmail.com', '08281860108', 'Pothanicad', 'Eranakulam', '15000', 1, 'abc@gmail.com', 'aabc@gmail.com', 20, '2023-10-07 09:49:15'),
+(43, 'Paily Saji', 'aabc@gmail.com', '08281860108', 'Pothanicad', 'Eranakulam', '500000', 1, 'abc@gmail.com', 'aabc@gmail.com', 21, '2023-10-07 10:32:49');
 
 -- --------------------------------------------------------
 
@@ -200,13 +200,27 @@ CREATE TABLE `request_form` (
 --
 
 INSERT INTO `request_form` (`donation_id`, `organization_email`, `donation_type`, `donation_details`, `estimated_amount`, `account_number`, `ifsc_code`, `bank_name`, `holder_name`, `branch`, `place`, `date`) VALUES
-(3, 'aabc@gmail.com', 'Scholarship', 'Need for Education', '30002', '8436341685', '35468PH', 'India Bank', 'Thomas Mathew', 'Eranakulam', 'Eranakulam', '08/31/2023'),
-(4, 'aabc@gmail.com', 'Hospital Case', 'Need for Medical Treatment', '50000', '5632552236', 'L5226P', 'India Bank', 'John', 'Eranakulam', 'Eranakulam', '09/26/2023'),
-(5, 'aabc@gmail.com', 'Orphanage', 'Maintainance of Orphanage', '60000', '563222559965', 'LF689U', 'India Bank', 'Thomas', 'Muvattupuzha', 'Muvattupuzha', '08/31/2023'),
-(6, 'aabc@gmail.com', 'Scholarship', 'Need for higher Education', '250000', '368435364', 'GR6435GD', 'India Bank', 'Kora', 'Muvattupuzha', 'Muvattupuzha', '09/05/2023'),
-(7, 'monc@gmail.com', 'Scholarship', 'Education', '5285', '8585298574', 'Kh8552', 'India Bank', 'Thomas', 'Eranakulam', 'Eranakulam', '09/20/2023'),
-(8, 'monc@gmail.com', 'Hospital Case', 'Surgery', '70000', '5632552236', 'LF689U', 'India Bank', 'john', 'Muvattupuzha', 'Pothanicad', '09/30/2023'),
-(9, 'monc@gmail.com', 'Hospital Case', 'Surgery', '70000', '5632552236', 'LF689U', 'India Bank', 'john', 'Muvattupuzha', 'Pothanicad', '09/30/2023');
+(20, 'aabc@gmail.com', 'Hospital Case', 'Operation', '20000', '8436341685', '35468PH', 'India Bank', 'John Kora', 'Muvattupuzha', 'Muvattupuzha', '09/22/2023');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `total_amount`
+--
+
+CREATE TABLE `total_amount` (
+  `amount_id` int(11) NOT NULL,
+  `request_id` int(11) NOT NULL,
+  `recieved_amount` int(11) NOT NULL DEFAULT 0,
+  `estimated_amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `total_amount`
+--
+
+INSERT INTO `total_amount` (`amount_id`, `request_id`, `recieved_amount`, `estimated_amount`) VALUES
+(4, 20, 20500, 20000);
 
 --
 -- Indexes for dumped tables
@@ -251,6 +265,12 @@ ALTER TABLE `request_form`
   ADD PRIMARY KEY (`donation_id`);
 
 --
+-- Indexes for table `total_amount`
+--
+ALTER TABLE `total_amount`
+  ADD PRIMARY KEY (`amount_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -264,7 +284,7 @@ ALTER TABLE `complaints`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `registration_donor`
@@ -282,7 +302,13 @@ ALTER TABLE `registration_organisation`
 -- AUTO_INCREMENT for table `request_form`
 --
 ALTER TABLE `request_form`
-  MODIFY `donation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `donation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `total_amount`
+--
+ALTER TABLE `total_amount`
+  MODIFY `amount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

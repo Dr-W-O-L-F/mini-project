@@ -5,17 +5,17 @@ $id = $_GET['id'];
 ?>
 <div id="page-wrapper">
     <div class="main-page">
-        <h2 class="title1">Replay</h2>
+        <h2 class="title1">Reply</h2>
 
 
         <div class="col-md-8 compose-right widget-shadow">
       <div class="panel-default">
         <div class="panel-heading">
-          Compose Your Replay
+          Compose Your Reply
         </div>
         <div class="panel-body">
           <div class="alert alert-info">
-            Please fill details to send the replay
+            Please fill details to send the reply
           </div>
           <form class="com-mail" method="POST" action="sendreplay.php">
           <input type="hidden" name="complaint_id" value="<?php echo $id; ?>">

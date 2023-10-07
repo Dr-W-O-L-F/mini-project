@@ -18,30 +18,66 @@ $email = $_SESSION['email'];
         <th>
           <h2 class="title1">Account Number</h2>
         </th>
+        <th>
+          <h2 class="title1">Status</h2>
+        </th>
+        <th>
+          <h2 class="title1">View</h2>
+        </th>
         <th></th>
       </thead>
       <tbody>
         <?php
         require("connect.php");
-        // Corrected the SQL query by adding single quotes around $email
+        // Corrected the SQL query by adding single quotes around $email and added a missing semicolon
         $sql = "SELECT * FROM request_form WHERE organization_email='$email'";
         $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
           while ($row = mysqli_fetch_assoc($res)) {
+            $id = $row['donation_id'];
+            $sql1 = "SELECT * FROM total_amount WHERE request_id=$id";
+            $res1 = mysqli_query($conn, $sql1);
+            if (mysqli_num_rows($res1) > 0) {
+              while ($row1 = mysqli_fetch_assoc($res1)) {
+                if ($row1['recieved_amount'] >= $row['estimated_amount']) {
         ?>
-            <tr>
-              <td>
-                <?php echo $row['donation_type'] ?>
-              </td>
-              <td>
-                <?php echo $row['estimated_amount'] ?>
-              </td>
-              <td>
-                <?php echo $row['account_number'] ?>
-              </td>
-              <td><a class="btn btn-primary" href="showrequest.php?id=<?php echo $row['donation_id'] ?>">View</a></td>
-            </tr>
+                  <tr>
+                    <td>
+                      <?php echo $row['donation_type'] ?>
+                    </td>
+                    <td>
+                      <?php echo $row['estimated_amount'] ?>
+                    </td>
+                    <td>
+                      <?php echo $row['account_number'] ?>
+                    </td>
+                    <td>
+                      Complete
+                    </td>
+                    <td><a class="btn btn-primary" href="showrequest.php?id=<?php echo $row['donation_id'] ?>">View</a></td>
+                  </tr>
         <?php
+                } else {
+        ?>
+                  <tr>
+                    <td>
+                      <?php echo $row['donation_type'] ?>
+                    </td>
+                    <td>
+                      <?php echo $row['estimated_amount'] ?>
+                    </td>
+                    <td>
+                      <?php echo $row['account_number'] ?>
+                    </td>
+                    <td>
+                      Incomplete
+                    </td>
+                    <td><a class="btn btn-primary" href="showrequest.php?id=<?php echo $row['donation_id'] ?>">View</a></td>
+                  </tr>
+        <?php
+                }
+              }
+            }
           }
         }
         ?>
@@ -53,4 +89,3 @@ $email = $_SESSION['email'];
 <?php
 include("footer.php");
 ?>
-  

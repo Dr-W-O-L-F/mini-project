@@ -5,7 +5,6 @@
 <script type="text/javascript" src="swal/sweetalert2@11.js"></script>
 </head>
 <body>
-</html>
 <?php
 require("connect.php");
 
@@ -31,17 +30,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <link rel="stylesheet" href="style.css">
             <title>Animated Login Page</title>
             <script>
-		function validatePassword() {
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("confirmPassword").value;
-		if (password !== confirmPassword) {
-        alert("Passwords do not match. Please try again.");
-        return false;
-	    } else {
-        return true;
-        }
-        }
-		</script>
+                function validatePassword() {
+                    var password = document.getElementById("password").value;
+                    var confirmPassword = document.getElementById("confirmPassword").value;
+
+                    var passwordPattern = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$/;
+
+                    if (!passwordPattern.test(password)) {
+                        alert("*Password should contain at least 8 characters, including one special symbol, one character, and one number");
+                        return false;
+                    } else if (password !== confirmPassword) {
+                        alert("Passwords do not match. Please try again.");
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            </script>
         </head>
         <body>
             <div class="square">
@@ -49,10 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2>Change Password</h2>
                     <form action="updatepass.php" method="POST" onsubmit="return validatePassword()">
                         <div class="inputBx">
-						<input type="password" name="password" placeholder="New Password" id="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
+                            <input type="password" name="password" placeholder="New Password" id="password" required/>
                         </div>
                         <div class="inputBx">
-						<input type="password" name="confirmPassword" placeholder="Confirm Password" id="confirmPassword" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
+                            <input type="password" name="confirmPassword" placeholder="Confirm Password" id="confirmPassword" required/>
                         </div>
                         <!-- Include the email as a hidden input field -->
                         <input type="hidden" name="email" value="<?php echo $email; ?>">
@@ -67,22 +72,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </body>
         </html>
-<?php
+        <?php
     } else {
         // Security question answer does not match
         ?>
         <script>
-                             Swal.fire({
-                            icon: 'error',
-                            text: 'Security question answer does not match. Password change failed. ',
-                            didClose: () => {
-                           window.location.href = "forgotpassword.php";
-                            }
-                            });
+            Swal.fire({
+                icon: 'error',
+                text: 'Security question answer does not match. Password change failed. ',
+                didClose: () => {
+                    window.location.href = "forgotpassword.php";
+                }
+            });
         </script>
         <?php
     }
 }
-
 ?>
- 
+</body>
+</html>

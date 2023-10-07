@@ -129,9 +129,9 @@ if (isset($_GET['email'])) {
     }
 
     // Update 'registration_organisation' table
-    $sql_update_reg_org = "UPDATE `registration_organisation` SET `full_name`=?, `email`=?, `phone`=?, `street`=?, `district`=?, `pincode`=?, `organisation_name`=?, `organisation_email`=?, `organisation_phone`=?, `organisation_street`=?, `organistion_district`=?, `organisation_pincode`=?, `organisation_licence_number`=?, `organisation_licence_file`=? WHERE `email`=?";
+    $sql_update_reg_org = "UPDATE `registration_organisation` SET `full_name`=?, `email`=?, `phone`=?, `street`=?, `district`=?, `pincode`=?, `organisation_name`=?, `organisation_phone`=?, `organisation_street`=?, `organistion_district`=?, `organisation_pincode`=?, `organisation_licence_number`=?, `organisation_licence_file`=? WHERE `email`=?";
     $stmt_update_reg_org = $conn->prepare($sql_update_reg_org);
-    $stmt_update_reg_org->bind_param("sssssssssssssss", $full_name, $email_post, $mobnumber, $street, $district, $pincode, $org_name, $org_email, $org_phone, $org_street, $org_district, $org_pincode, $org_license_num, $file_name, $email);
+    $stmt_update_reg_org->bind_param("ssssssssssssss", $full_name, $email_post, $mobnumber, $street, $district, $pincode, $org_name, $org_phone, $org_street, $org_district, $org_pincode, $org_license_num, $file_name, $email);
 
     if ($stmt_update_reg_org->execute()) {
         // Update 'login' table

@@ -103,6 +103,7 @@ if ($res->num_rows > 0) {
                 if ($res1->num_rows > 0) {
                     $row1 = $res1->fetch_assoc();
                     ?>
+                    <p>*Password should containt atleast 8 charactere, one special symbol, character, number</p>
                     <li>
                     <input type="password" name="password" placeholder="Password" value="<?php echo $row1['password'] ?>" id="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
                     <div class="clear"> </div>

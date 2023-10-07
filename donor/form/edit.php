@@ -87,6 +87,7 @@ if ($res->num_rows > 0) {
                     <input type="text" name="pincode" placeholder="Pincode" value="<?php echo $row['pincode'] ?>" pattern="^\d{6}$" required/>
                     <div class="clear"> </div>
                 </li> 
+                <p>*Password should containt atleast 8 charactere, one special symbol, character, number</p>
                 <li>
                     <input type="password" name="password" placeholder="Password" value="<?php echo $row['password'] ?>" id="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
                     <div class="clear"> </div>

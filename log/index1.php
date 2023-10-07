@@ -61,7 +61,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<li>
 					<input type="text" name="pincode" placeholder="Pincode" pattern="^\d{6}$" required/>
 					<div class="clear"> </div>
-				</li> 
+				</li>
+				<p>*Password should containt atleast 8 charactere, one special symbol, character, number</p>
 				<li>
 					<input type="password" name="password" placeholder="Password" id="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
 					<div class="clear"> </div>

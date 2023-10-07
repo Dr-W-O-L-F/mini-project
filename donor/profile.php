@@ -15,14 +15,38 @@ $email = $_SESSION['email'];
         if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
                 ?>
-                <b>Donor Name: <h3><?php echo $row['full_name'] ?></h3><br></b>
-                <b>Email: <h3><?php echo $row['email'] ?></h3><br></b>
-                <b>Mobile: <h3><?php echo $row['mob'] ?></h3><br></b>
-                <b>Street: <h3><?php echo $row['street'] ?></h3><br></b>
-                <b>District: <h3><?php echo $row['district'] ?></h3><br></b>
-                <b>Pin: <h3><?php echo $row['pincode'] ?></h3><br></b>
-				<a class="btn btn-success" href="form/edit.php?email=<?php echo $row['email'] ?>">Edit</a>
+<div class="col-md-4 chart-layer1-right"> 
+						<div class="user-marorm">
+						<div class="">				
+						</div>
+						<div class="malorm-bottom">
+							 <h2><?php echo $row['full_name'] ?></h2>
+							<p><b>Email: </b><?php echo $row['email'] ?> <br>
+                            <b>Contact Number: </b> <?php echo $row['mob'] ?> <br>
+                            <b>State: </b><?php echo $row['street'] ?> <br>
+                            <b>District: </b><?php echo $row['district'] ?> <br>
+                            <b>PIN: </b><?php echo $row['pincode'] ?><br>
+                            <a class="btn btn-success" href="form/edit.php?email=<?php echo $row['email'] ?>">Edit</a></p>
+							<ul class="malorum-icons">
+								<li><a href="#"><i class="fa fa-facebook"> </i>
+									<div class="tooltip"><span>Facebook</span></div>
+								</a></li>
+								<li><a href="#"><i class="fa fa-twitter"> </i>
+									<div class="tooltip"><span>Twitter</span></div>
+								</a></li>
+								<li><a href="#"><i class="fa fa-google-plus"> </i>
+									<div class="tooltip"><span>Google</span></div>
+								</a></li>
+							</ul>
+						</div>
+					   </div>
+					</div> 
+					<div class="clearfix"> </div>
+				</div>
+
+
                 <?php
+
             }
         }
         ?>

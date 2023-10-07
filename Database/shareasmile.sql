@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2023 at 11:17 AM
+-- Generation Time: Oct 07, 2023 at 08:16 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -49,7 +49,8 @@ INSERT INTO `complaints` (`complaint_id`, `subject`, `description`, `email`, `ti
 (6, 'Request', 'Testing', 'abc@gmail.com', '2023-10-06 05:21:53', 0, ''),
 (7, 'testing', 'testing complaint box\r\n', 'aabc@gmail.com', '2023-10-06 05:00:43', 1, 'tested'),
 (8, 'Donor Testing', 'Testing if it is working?', 'abc@gmail.com', '2023-10-05 15:29:39', 0, ''),
-(9, 'Organization Testing', 'complaint box testing\r\n', 'aabc@gmail.com', '2023-10-05 15:31:43', 0, '');
+(9, 'Organization Testing', 'complaint box testing\r\n', 'aabc@gmail.com', '2023-10-05 15:31:43', 0, ''),
+(10, 'Request', 'hi', 'amalchandran@gmail.com', '2023-10-06 09:26:39', 1, 'hello');
 
 -- --------------------------------------------------------
 
@@ -73,6 +74,7 @@ INSERT INTO `login` (`email`, `password`, `user_type`, `security_question`, `sec
 ('aabc@gmail.com', 'pass@1234', 'Organization', 'Your favorite food?', 'Biriyani'),
 ('abc@gmail.com', 'pass@1234', 'Donor', 'What is your pet?', 'Dog'),
 ('amal@gmail.com', 'amal@1234', 'Donor', 'Your favorite food?', 'Mandhi'),
+('amalchandran@gmail.com', 'Amal@262524', 'Donor', 'What is your pet?', 'Dog'),
 ('gbb@gmail.com', 'pass@1234', 'Organization', 'Your favorite number?', '6'),
 ('mon@gmail.com', 'pass@1234', 'Donor', 'Your favorite number?', '10'),
 ('monc@gmail.com', 'pass@1234', 'Organization', 'Your favorite number?', '6'),
@@ -132,8 +134,9 @@ CREATE TABLE `registration_donor` (
 --
 
 INSERT INTO `registration_donor` (`user_id`, `full_name`, `email`, `mob`, `street`, `district`, `pincode`, `password`) VALUES
-(4, 'Paily Saji', 'abc@gmail.com', 2020202020, 'Paingottoor', 'Eranakulam', 123456, 'pass@1234'),
+(4, 'Paily Saji', 'abc@gmail.com', 2020202021, 'Paingottoor', 'Eranakulam', 123456, 'pass@1234'),
 (7, 'Amal Chandran', 'amal@gmail.com', 2147483647, 'Kothamangalam', 'Eranakulam', 686695, 'amal@1234'),
+(8, 'Amal Chandran', 'amalchandran@gmail.com', 2147483647, 'Kothamangalam', 'Eranakulam', 686691, 'Amal@262524'),
 (6, 'moncy', 'mon@gmail.com', 1234567890, 'Muvattupuzha', 'Eranakulam', 123459, 'pass@1234'),
 (5, 'Thomas', 'tho2@gmail.com', 828186010, 'Eranakulam', 'Eranakulam', 123456, 'pass@1234');
 
@@ -167,7 +170,7 @@ CREATE TABLE `registration_organisation` (
 --
 
 INSERT INTO `registration_organisation` (`full_name`, `email`, `phone`, `street`, `district`, `pincode`, `organisation_id`, `organisation_name`, `organisation_email`, `organisation_phone`, `organisation_street`, `organistion_district`, `organisation_pincode`, `organisation_licence_number`, `organisation_licence_file`, `verify_status`) VALUES
-('Paily Saji', 'aabc@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 16, 'Demo Organization', '', '8281860100', 'Eranakulam', 'Eranakulam', '123456', 'KL-76542', 'uploads/651edeab51c22.jpg', 1),
+('Paily Saji', 'aabc@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 16, 'Demo Organization', 'aabc@gmail.com', '8281860100', 'Eranakulam', 'Eranakulam', '123456', 'KL-76542', 'uploads/651edeab51c22.jpg', 1),
 ('Paily Saji', 'gbb@gmail.com', '8281860108', 'Eranakulam', 'Eranakulam', '123456', 15, 'QWERTTY', 'gbb@gmail.com', '08281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-59778', 'uploads/f4.jpg', 0),
 ('moncy', 'monc@gmail.com', '01234567890', 'Muvattupuzha', 'Eranakulam', '123459', 17, 'QWERTTY', 'monc@gmail.com', '08281860108', 'Eranakulam', 'Eranakulam', '123456', 'KL-98546', 'uploads/9.jpg', 1);
 
@@ -255,7 +258,7 @@ ALTER TABLE `request_form`
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -267,7 +270,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `registration_donor`
 --
 ALTER TABLE `registration_donor`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `registration_organisation`

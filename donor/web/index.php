@@ -84,7 +84,7 @@ $donation_id = isset($_GET['donation_id']) ? $_GET['donation_id'] : null;
 									<div class="card-details agileits-w3layouts"> 
 										<div class="expiration">
 											<aside>Expiration Date</aside>
-											<input type="text" name="date" onkeyup="$cc.expiry.call(this,event)" maxlength="7" placeholder="mm/yyyy" required="">
+											<input type="text" name="date" id="expiry-date" maxlength="7" placeholder="mm/yyyy" required="">
 										</div> 
 										<div class="cvv">
 											<aside>CVV</aside>
@@ -112,5 +112,42 @@ $donation_id = isset($_GET['donation_id']) ? $_GET['donation_id'] : null;
 	<script src="js/creditCardValidator.js" type="text/javascript"></script>
 	<!-- //Validator -->  
 
+	<script>
+	function validateExpiry() {
+	    var input = document.getElementById("expiry-date");
+	    var currentDate = new Date();
+	    var inputValue = input.value;
+	    
+	    // Check if the input value matches the mm/yyyy format
+	    var pattern = /^(0[1-9]|1[0-2])\/(20\d{2}|21[0-9][0-9])$/;
+	    
+	    if (!pattern.test(inputValue)) {
+	        alert("Invalid date format. Please use mm/yyyy format.");
+	        return false;
+	    }
+	    
+	    var inputDateParts = inputValue.split('/');
+	    var inputMonth = parseInt(inputDateParts[0], 10);
+	    var inputYear = parseInt(inputDateParts[1], 10);
+	    
+	    var maxDate = new Date(2100, 11, 31); // December is 11 because months are zero-based
+	    
+	    var userDate = new Date(inputYear, inputMonth - 1, 1); // Subtract 1 from month because months are zero-based
+	    
+	    if (userDate < currentDate || userDate > maxDate) {
+	        alert("Expiration date must be valid one more month and before December 2100.");
+	        return false;
+	    }
+	    
+	    return true;
+	}
+
+	document.querySelector("form").addEventListener("submit", function(event) {
+	    if (!validateExpiry()) {
+	        event.preventDefault(); // Prevent form submission if validation fails
+	    }
+	});
+	</script>
+
 </body>
-</html> 
+</html>

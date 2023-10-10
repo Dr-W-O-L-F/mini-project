@@ -13,6 +13,7 @@ $email = $_SESSION['email'];
                 <th>Email</th>
                 <th>Amount</th>
                 <th>Date & Time</th>
+                <th>Recipt</th>
                 <th></th>
             </thead>
             <tbody>
@@ -26,9 +27,10 @@ $email = $_SESSION['email'];
                 ?>
                         <tr>
                             <td><?php echo $row['full_name'] ?></td>
-                            <td><?php echo $row['email'] ?></td>
+                            <td><?php echo $row['donor_email'] ?></td>
                             <td><?php echo $row['amount'] ?></td>
                             <td><?php echo $row['time_stamp'] ?></td>
+                            <td><a class="btn btn-primary" href="recipt.php?id=<?php echo $row['payment_id'] ?>&donation_id=<?php echo $row['donation_id']; ?>">Recipt</a></td>
                             <td><a class="btn btn-primary" href="showdetails.php?id=<?php echo $row['payment_id'] ?>&donation_id=<?php echo $row['donation_id']; ?>">View</a></td>
                         </tr>
                 <?php
@@ -43,4 +45,4 @@ $email = $_SESSION['email'];
 <?php
 include("footer.php");
 ?>
- 
+  

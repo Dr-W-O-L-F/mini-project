@@ -26,6 +26,7 @@ include("header.php");
         if (mysqli_num_rows($result1) > 0) {
           $row1 = mysqli_fetch_assoc($result1);
           $total = $row1['recieved_amount'];
+          $need = $row['estimated_amount'] - $total;
           if ($total < $row['estimated_amount']) {
     ?>
             <div class="col-md-6">
@@ -39,6 +40,7 @@ include("header.php");
                     <li class="list-group-item">Details: <?php echo $row['donation_details'] ?></li>
                     <li class="list-group-item">Date: <?php echo $row['date'] ?></li>
                     <li class="list-group-item">Estimated Amount: <?php echo $row['estimated_amount'] ?></li>
+                    <li class="list-group-item">Remaining To Collect: <?php echo $need ?></li>
                     <li class="list-group-item">Account Number: <?php echo $row['account_number'] ?></li>
                   </ul>
                 </div>

@@ -141,6 +141,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                   <li><a href="organizations.php"><i class="fa fa-angle-right"></i> Pending Verification</a></li>
                   <li><a href="organizationdetails.php"><i class="fa fa-angle-right"></i> Organization Details</a></li>
                   <li><a href="organizationreject.php"><i class="fa fa-angle-right"></i> Organization Rejected</a></li>
+                  <li><a href="donation_requests.php"><i class="fa fa-angle-right"></i> Requests</a></li>
                 </ul>
               </li>
               <li class="treeview">
@@ -159,6 +160,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <a href="complaints.php">
                 <i class="fa fa-th"></i> <span>Complaints</span>
                 <small class="label pull-right label-info"></small>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="report.php">
+                <i class="fa fa-pie-chart"></i>
+                <span>Report</span>
+                <span class="label label-primary pull-right"></span>
                 </a>
               </li>
             </ul>

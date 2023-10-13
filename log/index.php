@@ -17,16 +17,16 @@
 			<form action="login.php" method="POST">
 			<div class="inputBx">
 				<input type="email" name="email" placeholder="Email">
-			</div>
+			</div><br>
 			<div class="inputBx">
 				<input type="password" name="password" placeholder="Password">
-			</div>
+			</div>			<a href="forgotpassword.php"><b>Forget Password</b></a>
+
 			<div class="inputBx">
 				<input type="submit" value="Sign in">
 			</div>
 			<div class="links">
-				<a href="forgotpassword.php">Forget Password</a>
-				<a href="index1.php">Signup Organization</a>/ <a href="index2.php">Signup User</a>
+				<a href="index1.php">Signup AS Organization</a> <a href="index2.php">/ User</a>
 			</div>
 			</form>
 		</div>

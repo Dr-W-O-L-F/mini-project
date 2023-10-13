@@ -20,10 +20,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 </head>
 <body>
-	<?php 
+<?php
+require("../connect.php");
 $organization_email = isset($_GET['email']) ? $_GET['email'] : null;
 $donation_id = isset($_GET['donation_id']) ? $_GET['donation_id'] : null;
+$sql = "SELECT * FROM `total_amount` WHERE request_id = $donation_id";
+$result = mysqli_query($conn, $sql);
+
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    if ($row) {
+        $received = $row['recieved_amount'];
+        $estimate = $row['estimated_amount'];
+        $total = $estimate - $received;
+    } else {
+        echo "No data found for donation ID: $donation_id";
+    }
+} else {
+    echo "Query failed: " . mysqli_error($conn);
+}
 ?>
+
 	<div class="main">
 		<h1>Credit Card Donation Form</h1>
 		<form action="pay.php" method="post"> 
@@ -147,6 +164,20 @@ $donation_id = isset($_GET['donation_id']) ? $_GET['donation_id'] : null;
 	        event.preventDefault(); // Prevent form submission if validation fails
 	    }
 	});
+	function validateDonationAmount() {
+    var donationAmount = parseFloat(document.getElementsByName("amount")[0].value);
+    if (donationAmount <= 0 || isNaN(donationAmount) || donationAmount > <?php echo $total; ?>) {
+        alert("Donation amount must be a valid positive number less than or equal to $<?php echo $total; ?>.");
+        return false;
+    }
+    return true;
+}
+
+document.querySelector("form").addEventListener("submit", function(event) {
+    if (!validateExpiry() || !validateDonationAmount()) {
+        event.preventDefault(); // Prevent form submission if validation fails
+    }
+});
 	</script>
 
 </body>

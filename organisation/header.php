@@ -127,7 +127,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <ul class="sidebar-menu">
               <li class="header">MAIN NAVIGATION</li>
               <li class="treeview">
-                <a href="index1.php">
+                <a href="organizationdetails.php">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
               </li>

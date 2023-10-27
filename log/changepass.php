@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
                 <!-- Include the email as a hidden input field -->
                 <input type="hidden" name="email" value="<?php echo $email; ?>">
-                <div class="inputBx">
+                <div class="inputBx"><a href="otp.php?email=<?php echo $email; ?>">Send OTP</a>
                     <input type="submit" value="Submit">
                 </div>
                 <div class="links">
@@ -62,3 +62,4 @@ if (mysqli_num_rows($result) > 0) {
                                 });
     </script>
 <?php } ?> 
+ 

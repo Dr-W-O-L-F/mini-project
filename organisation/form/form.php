@@ -48,7 +48,7 @@ if (mysqli_query($conn, $sql)) {
                 icon: 'success',
                 text: 'Form submitted successfully',
                 didClose: () => {
-                    window.location.replace('../index1.php');
+                    window.location.replace('../organizationdetails.php');
                 }
             });
         </script>

@@ -1,12 +1,15 @@
 <?php
-session_start();
+session_start(); // Start the session
 include("header.php");
 $email = $_SESSION['email'];
-// Rest of your code...
 ?>
+
 <div id="page-wrapper">
     <div class="main-page">
         <h2 class="title1">Complaints List</h2>
+
+        <!-- Add the search input field -->
+        <input type="text" id="searchInput" placeholder="Search for complaints">
 
         <table class="table table-hover">
             <thead>
@@ -99,4 +102,23 @@ $email = $_SESSION['email'];
 <?php
 include("footer.php");
 ?>
- 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        const complaintRows = document.querySelectorAll("tbody tr");
+
+        searchInput.addEventListener("input", function () {
+            const searchText = searchInput.value.toLowerCase();
+
+            complaintRows.forEach(function (row) {
+                const text = row.textContent.toLowerCase();
+                if (text.includes(searchText)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+    });
+</script>

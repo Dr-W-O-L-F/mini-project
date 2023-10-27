@@ -3,15 +3,18 @@ include("header.php");
 ?>
 
 <style>
-/* Add custom CSS styles to make page-wrapper scrollable */
-#page-wrapper {
-    max-height: 500px; /* Set a maximum height for the page-wrapper */
-    overflow-y: auto; /* Add vertical scrollbar if content exceeds the height */
-}
+  /* Add custom CSS styles to make page-wrapper scrollable */
+  #page-wrapper {
+      max-height: 500px; /* Set a maximum height for the page-wrapper */
+      overflow-y: auto; /* Add a vertical scrollbar if content exceeds the height */
+  }
 </style>
 
 <div id="page-wrapper">
   <div class="main-page">
+        <!-- Add the search input field -->
+        <input type="text" id="searchInput" placeholder="Search for donations">
+
     <h2 class="title1">Donation List</h2>
 
     <?php
@@ -63,3 +66,23 @@ include("header.php");
 <?php
 include("footer.php");
 ?>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const donationPanels = document.querySelectorAll(".panel-info");
+
+    searchInput.addEventListener("input", function () {
+      const searchText = searchInput.value.toLowerCase();
+
+      donationPanels.forEach(function (panel) {
+        const panelText = panel.textContent.toLowerCase();
+        if (panelText.includes(searchText)) {
+          panel.style.display = "";
+        } else {
+          panel.style.display = "none";
+        }
+      });
+    });
+  });
+</script>

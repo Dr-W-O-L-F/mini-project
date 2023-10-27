@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="w3_agileits_main_grid w3l_main_grid">
                         <span class="agileits_grid">
                             <label>Donation Type <span class="star">*</span></label>
-			<select name="event_name" required style="color: black;">
+			<select name="event_name" required style="color: Blue;">
             <option value="" disabled selected>Select Donation Type</option>
             <option value="Scholarship">Scholarship</option>
             <option value="Medical Support">Medical Support</option>
@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </span>                            
                     </div>
                     <div class="w3_agileits_main_grid w3l_main_grid">
-                        <span class "agileits_grid">
+                        <span class="agileits_grid">
                             <label>Estimated Amount <span class="star">*</span></label>
                             <input type="text" name="estimated_amount" placeholder="Estimated Amount" required="">
                         </span>

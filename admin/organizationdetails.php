@@ -18,6 +18,12 @@ include("header.php");
                 <th>
                     <h2 class="title1">Organization District</h2>
                 </th>
+                <th>
+                    <h2 class="title1">Mail</h2>
+                </th>
+                <th>
+                    <h2 class="title1">Full Details</h2>
+                </th>
                 <th></th>
             </thead>
             <tbody>
@@ -32,6 +38,7 @@ include("header.php");
                             <td><?php echo $row['organisation_name'] ?></td>
                             <td><?php echo $row['organisation_street'] ?></td>
                             <td><?php echo $row['organistion_district'] ?></td>
+                            <td><a class="btn btn-primary" href="composeemail.php?email=<?php echo $row['organisation_email']?>">Mail</a></td>
                             <td><a class="btn btn-primary" href="showdetailsapprove.php?email=<?php echo $row['organisation_email']?>">View</a></td>
                         </tr>
 

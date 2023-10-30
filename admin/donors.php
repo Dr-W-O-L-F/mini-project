@@ -44,6 +44,8 @@ include("header.php");
                             <td><?php echo $row['street'] ?></td>
                             <td><?php echo $row['district'] ?></td>
                             <td><?php echo $row['pincode'] ?></td>
+                            <td><a class="btn btn-primary" href="composeemail.php?email=<?php echo $row['email']?>">Mail</a></td>
+
                         </tr>
                 <?php
                     }

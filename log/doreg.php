@@ -35,7 +35,7 @@ Swal.fire({
     <?php
 } else {
     // Insert the values into the registration_donor table
-    $sql = "INSERT INTO `registration_donor`(user_id, full_name, email, mob, street, district, pincode,password) VALUES (NULL, '$full_name', '$email', '$mobnumber', '$street', '$district', '$pincode', '$password')";
+    $sql = "INSERT INTO `registration_donor`(user_id, full_name, email, mob, street, district, pincode) VALUES (NULL, '$full_name', '$email', '$mobnumber', '$street', '$district', '$pincode')";
     $sql1="INSERT INTO `login`(`email`, `password`, `user_type`, `security_question`, `security_answer`) VALUES ('$email','$password','Donor','$security_question','$your_answer')";   
     if (mysqli_query($conn, $sql)) {
         if(mysqli_query($conn, $sql1)){

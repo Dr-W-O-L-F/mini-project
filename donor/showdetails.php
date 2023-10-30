@@ -21,7 +21,6 @@ include("header.php");
 
             if ($res->num_rows > 0) {
                 $row = $res->fetch_assoc();
-
                 // Display the details of the selected row
                 echo "<h3><b>Donor Name:</b> " . $row['full_name'] . "<br>";
                 echo "<b>Email:</b> " . $row['email'] . "<br>";
@@ -30,7 +29,7 @@ include("header.php");
                 echo "<b>Address :</b> " . $row['address'] . "<br>";
                 echo "<b>Amount:</b> " . $row['amount'] . "<br>";
                 echo "<b>Organization Email:</b> " . $row['organization_email'] . "<br>";
-                echo "<b>Date & Time :</b> " . $row['time_stamp'] . "<br>";
+                echo "<b>Date & Time :</b> " . $row['time_stamp'] . "<br><br>";
 
                 // Add more fields as needed
                 $stmt = $conn->prepare("SELECT * FROM request_form WHERE donation_id = ?");
@@ -39,6 +38,7 @@ include("header.php");
                 $res = $stmt->get_result();
                 if ($res->num_rows > 0) {
                     while ($row1 = $res->fetch_assoc()) {
+                        ?><h2 class="title1">Request Details</h2><?php
                         // Display the details of each row from request_form
                         echo "<b>Donation Type:</b> " . $row1['donation_type'] . "<br>";
                         echo "<b>Donation Details:</b> " . $row1['donation_details'] . "<br>";

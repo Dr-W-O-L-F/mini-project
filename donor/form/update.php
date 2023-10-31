@@ -34,8 +34,7 @@ if (isset($_GET['email'])) {
             `mob`='$mobnumber',
             `street`='$street',
             `district`='$district',
-            `pincode`='$pincode',
-            `password`='$password' 
+            `pincode`='$pincode' 
             WHERE `email`='$Email'";
 
         if (mysqli_query($conn, $sql)) {

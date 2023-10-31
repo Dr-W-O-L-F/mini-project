@@ -88,12 +88,6 @@ if ($res->num_rows > 0) {
                     <div class="clear"> </div>
                 </li> 
                 <p>*Password should containt atleast 8 charactere, one special symbol, character, number</p>
-                <li>
-                    <input type="password" name="password" placeholder="Password" value="<?php echo $row['password'] ?>" id="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
-                    <div class="clear"> </div>
-                </li>
-                <li>
-                </li> 
                 <?php
                } if (!$stmt1->bind_param("s", $email)) {
                     die("Binding parameters failed: " . $stmt1->error);
@@ -106,6 +100,13 @@ if ($res->num_rows > 0) {
                 if ($res1->num_rows > 0) {
                     $row1 = $res1->fetch_assoc();
                     ?>
+                <li>
+                    <input type="password" name="password" placeholder="Password" value="<?php echo $row1['password'] ?>" id="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" required/>
+                    <div class="clear"> </div>
+                </li>
+                <li>
+                </li> 
+
                     <li>
                         <select id="Questions" name="security_question">
                             <option value="Your favorite number?" <?php if ($row1['security_question'] === 'Your favorite number?') echo 'selected'; ?>>Your favorite number?</option>

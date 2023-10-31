@@ -46,15 +46,40 @@ if ($conn->query($sql) === TRUE) {
         
         // Redirect to 'donationdetails.php' on successful donation
         ?>
-        <script>
-            Swal.fire({
-                icon: 'success',
-                text: 'Donation Successful',
-                didClose: () => {
-                    window.location.replace('../donationdetails.php');
-                }
-            });
-        </script>
+<script>
+  let timerInterval;
+  Swal.fire({
+    title: 'PROCESSING!',
+    html: 'YOUR PAYMENT IS PROCESSING.',
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+      const b = Swal.getHtmlContainer().querySelector('b');
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft();
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    }
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log('I was closed by the timer');
+
+      // Add your code here to be executed after the first script has completed
+      Swal.fire({
+        icon: 'success',
+        text: 'Donation Successful',
+        didClose: () => {
+          window.location.replace('../donationdetails.php');
+        }
+      });
+    }
+  });
+</script>
+
         <?php
     } else {
         // Handle database update errors

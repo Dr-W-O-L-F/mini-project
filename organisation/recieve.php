@@ -10,12 +10,12 @@ $email = $_SESSION['email'];
 
     <input type="text" id="searchInput" placeholder="Search for donations">
 
-    <table class="table table-hover">
+    <table class="table table-hover"> 
       <thead>
-        <th>Donor Name</th>
-        <th>Email</th>
-        <th>Amount</th>
-        <th>Date & Time</th>
+        <th><h2 class="title1">Donor Name</h2></th>
+        <th><h2 class="title1">Email</h2></th>
+        <th><h2 class="title1">Amount</h2></th>
+        <th><h2 class="title1">Date & Time</h2></th>
         <th></th>
       </thead>
       <tbody>

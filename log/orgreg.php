@@ -32,7 +32,7 @@ $target_file = $target_dir . basename($_FILES["org_license"]["name"]);
 $uploadOk = 1;
 
 // Check if the email already exists in login table
-$sql_check_login = "SELECT * FROM login WHERE email='$email'";
+$sql_check_login = "SELECT * FROM login WHERE email='$org_email'";
 $res_check_login = select_data($sql_check_login);
 
 // Check if the email already exists in registration_organisation table
@@ -87,7 +87,7 @@ if (mysqli_num_rows($res_check_login) > 0 || mysqli_num_rows($res_check_org) > 0
             organisation_name, organisation_email, organisation_phone, organisation_street, organistion_district, organisation_pincode, organisation_licence_number, organisation_licence_file, verify_status) 
             VALUES ('$full_name', '$email', '$mobnumber', '$street', '$district', '$pincode', NULL, '$org_name',
             '$org_email', '$org_phone', '$org_street', '$org_district', '$org_pincode', '$org_license_num', '$target_file', 0)";
-            $sql1 = "INSERT INTO `login`(`email`, `password`, `user_type`, `security_question`, `security_answer`) VALUES ('$email','$password','Organization','$security_question','$your_answer')";
+            $sql1 = "INSERT INTO `login`(`email`, `password`, `user_type`, `security_question`, `security_answer`) VALUES ('$org_email','$password','Organization','$security_question','$your_answer')";
 if (mysqli_query($conn, $sql)) {
                 if (mysqli_query($conn, $sql1)) {
                     ?>

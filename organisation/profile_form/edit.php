@@ -41,7 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <?php
 require('connect.php');
 $email = $_GET['email'];
-$stmt = $conn->prepare("SELECT * FROM registration_organisation WHERE email = ?");
+$stmt = $conn->prepare("SELECT * FROM registration_organisation WHERE organisation_email = ?");
 $stmt1 = $conn->prepare("SELECT * FROM login WHERE email = ?");
 if (!$stmt || !$stmt1) {
     die("Prepare failed: " . $conn->error);
@@ -71,7 +71,7 @@ if ($res->num_rows > 0) {
 					<div class="clear"> </div>
 				</li> 
 				<li>
-					<input type="email" name="email" placeholder="Email" value="<?php echo $row['email'] ?>" required/>
+					<input type="email" name="email1" placeholder="Email" value="<?php echo $row['email'] ?>" required/>
 					<div class="clear"> </div>
 				</li> 
 				<li>

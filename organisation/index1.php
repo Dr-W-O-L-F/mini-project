@@ -13,7 +13,7 @@ if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 
     // Use single quotes around the email value in SQL query
-    $sql = "SELECT * FROM `registration_organisation` WHERE email='$email'";
+    $sql = "SELECT * FROM `registration_organisation` WHERE organisation_email='$email'";
 
     $result = mysqli_query($conn, $sql);
 

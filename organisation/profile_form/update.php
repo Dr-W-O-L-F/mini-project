@@ -15,7 +15,7 @@ if (isset($_GET['email'])) {
 
     // Retrieve data from the form using $_POST
     $full_name = $_POST['full_name'];
-    $email_post = $_POST['email']; // Use a different variable name to avoid conflict
+    $new_mail = $_POST['email1']; // Use a different variable name to avoid conflict
     $mobnumber = $_POST['mobnumber'];
     $street = $_POST['street'];
     $district = $_POST['district'];
@@ -101,7 +101,7 @@ if (isset($_GET['email'])) {
         }
     } else {
         // No new file uploaded, retrieve the existing file path from the database
-        $sql_select_existing_file = "SELECT `organisation_licence_file` FROM `registration_organisation` WHERE `email`=?";
+        $sql_select_existing_file = "SELECT `organisation_licence_file` FROM `registration_organisation` WHERE `organisation_email`=?";
         $stmt_select_existing_file = $conn->prepare($sql_select_existing_file);
         $stmt_select_existing_file->bind_param("s", $email);
         $stmt_select_existing_file->execute();
@@ -129,15 +129,19 @@ if (isset($_GET['email'])) {
     }
 
     // Update 'registration_organisation' table
-    $sql_update_reg_org = "UPDATE `registration_organisation` SET `full_name`=?, `email`=?, `phone`=?, `street`=?, `district`=?, `pincode`=?, `organisation_name`=?, `organisation_phone`=?, `organisation_street`=?, `organistion_district`=?, `organisation_pincode`=?, `organisation_licence_number`=?, `organisation_licence_file`=? WHERE `email`=?";
+    // echo $full_name;
+    // $sql="UPDATE registration_organisation SET full_name='$full_name',email='$new_mail',phone='$mobnumber',street='$street',district='$district',pincode='$pincode',organisation_name='$org_name',organisation_phone='$org_phone',organisation_street='$org_street',organistion_district='$org_district',organisation_pincode='$org_pincode',organisation_licence_number='$org_license_num',organisation_licence_file='$original_file_name' WHERE email='$email'";
+    // echo $sql;
+    
+     $sql_update_reg_org = "UPDATE `registration_organisation` SET `full_name`=?, `email`=?, `phone`=?, `street`=?, `district`=?, `pincode`=?, `organisation_name`=?, `organisation_phone`=?, `organisation_street`=?, `organistion_district`=?, `organisation_pincode`=?, `organisation_licence_number`=?, `organisation_licence_file`=? WHERE `organisation_email`=?";
     $stmt_update_reg_org = $conn->prepare($sql_update_reg_org);
-    $stmt_update_reg_org->bind_param("ssssssssssssss", $full_name, $email_post, $mobnumber, $street, $district, $pincode, $org_name, $org_phone, $org_street, $org_district, $org_pincode, $org_license_num, $file_name, $email);
+    $stmt_update_reg_org->bind_param("ssssssssssssss", $full_name, $new_mail, $mobnumber, $street, $district, $pincode, $org_name, $org_phone, $org_street, $org_district, $org_pincode, $org_license_num, $file_name, $email);
 
     if ($stmt_update_reg_org->execute()) {
         // Update 'login' table
         $sql_update_login = "UPDATE `login` SET `password`=?, `security_question`=?, `security_answer`=? WHERE `email`=?";
         $stmt_update_login = $conn->prepare($sql_update_login);
-        $stmt_update_login->bind_param("ssss", $password, $security_question, $your_answer, $email_post);
+        $stmt_update_login->bind_param("ssss", $password, $security_question, $your_answer, $email);
 
         if ($stmt_update_login->execute()) {
             ?>

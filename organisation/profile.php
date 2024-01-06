@@ -10,7 +10,7 @@ $email = $_SESSION['email'];
         <?php
         require("connect.php");
         // Use single quotes around the email value in the SQL query
-        $sql = "SELECT * FROM registration_organisation WHERE email='$email'";
+        $sql = "SELECT * FROM registration_organisation WHERE organisation_email='$email'";
         $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
@@ -28,7 +28,7 @@ $email = $_SESSION['email'];
                             <b>PIN: </b><?php echo $row['organisation_pincode'] ?><br>
                             <b>License Number: </b><?php echo $row['organisation_licence_number'] ?><br>
                             <img src="../log/<?php echo $row['organisation_licence_file'] ?>" width="300" height="200"><br><br>
-                            <a class="btn btn-success" href="profile_form/edit.php?email=<?php echo $row['email'] ?>">Edit</a></p>
+                            <a class="btn btn-success" href="profile_form/edit.php?email=<?php echo $row['organisation_email'] ?>">Edit</a></p>
 							<ul class="malorum-icons">
 								<li><a href="#"><i class="fa fa-facebook"> </i>
 									<div class="tooltip"><span>Facebook</span></div>
@@ -55,4 +55,3 @@ $email = $_SESSION['email'];
 <?php
 include("footer.php");
 ?>
- 
